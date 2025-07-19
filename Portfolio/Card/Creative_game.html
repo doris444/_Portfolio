@@ -164,30 +164,6 @@
       color: inherit;
     }
   </style>
-
-  <script>
-    function downloadMirror() 
-    {
-      const files = [
-        'file:///C:/Users/dolis/Desktop/Portfolio/Card/Files/BTM(Move).ppt',    // PPT 먼저
-        'file:///C:/Users/dolis/Desktop/Portfolio/Card/Files/BTM(Not_Move).pdf'  // PDF 다음
-      ];
-
-      files.forEach((file, index) => 
-      {
-        setTimeout(() => 
-        {
-          const a = document.createElement('a');
-          a.href = file;
-          a.download = file.split('/').pop();
-          a.style.display = 'none';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        }, index * 500); // 0.5초 간격으로 순서대로
-      });
-    }
-  </script>
 </head>
 <body>
   <!-- 하얀색 배경 영역 -->
@@ -220,7 +196,9 @@
             <img src="image/3.png" alt="스크린샷3" />
             <img src="image/4.png" alt="스크린샷4" />
           </div>
-          <div class="download-link" onclick="downloadMirror()">포토폴리오 다운로드 (PPT + PDF)</div>
+          <a href="https://drive.google.com/drive/folders/1XqHLt6OrMXzqCEmRkMbKlOnoTyl-eB6g?usp=sharing" target="_blank" class="download-link">
+            포토폴리오 다운로드 (PPT + PDF)
+            </a>
           <div style="margin-top: 8px; font-size: 16px; color: white;">
             스팀 링크 : <a href="https://store.steampowered.com/app/yourgame" target="_blank" style="color:#ffd89d; text-decoration: underline;">https://store.steampowered.com/app/yourgame</a>
           </div>
@@ -258,7 +236,7 @@
             <img src="image/7.png" alt="스크린샷7" />
             <img src="image/8.png" alt="스크린샷8" />
           </div>
-          <a href="files/witch_bakery.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
+          <a href="Files/Witch_Snackshop.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
         </div>
         <div class="game-right">
           <div class="game-title">창작 게임: 마녀 과자가게</div>
