@@ -1,245 +1,258 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>게임 제안서</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
-  <style>
-    body 
-    {
-      margin: 0;
-      padding: 0;
-      font-family: 'NanumSquare', sans-serif;
-      background-color: white;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>게임 제안서</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
+    <style>
+      body 
+      {
+        margin: 0;
+        padding: 0;
+        font-family: 'NanumSquare', sans-serif;
+        background-color: white;
+      }
 
-    .container 
-    {
-      width: 100%;
-      padding: 30px 90px;
-      box-sizing: border-box;
-      background-color: white;
-    }
+      .container 
+      {
+        width: 100%;
+        padding: 30px 90px;
+        box-sizing: border-box;
+        background-color: white;
+      }
 
-    .name 
-    {
-      font-size: 30px;
-      font-weight: 900;
-      margin-bottom: -7px;
-    }
+      .name 
+      {
+        font-size: 30px;
+        font-weight: 900;
+        margin-bottom: -7px;
+      }
 
-    .title 
-    {
-      font-size: 70px;
-      font-weight: 900;
-      margin-bottom: 50px;
-    }
+      .title 
+      {
+        font-size: 70px;
+        font-weight: 900;
+        margin-bottom: 50px;
+      }
 
-    .game-description 
-    {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      margin: 30px 0;
-    }
+      .game-description 
+      {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin: 30px 0;
+      }
 
-    .divider 
-    {
-      border: none;
-      border-top: 2px solid #ccc;
-      margin: 20px 0;
-      width: 800px;
-    }
+      .divider 
+      {
+        border: none;
+        border-top: 2px solid #ccc;
+        margin: 20px 0;
+        width: 800px;
+      }
 
-    .colored-section 
-    {
-      background-color: #6667AB;
-      padding: 80px 90px;
-      color: white;
-      margin-top: 50px;
-    }
+      .colored-section 
+      {
+        background-color: #6667AB;
+        padding: 80px 90px;
+        color: white;
+        margin-top: 50px;
+      }
 
-    .game-content 
-    {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin-top: 80px;
-    }
+      .game-content 
+      {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 80px;
+      }
 
-    .game-left 
-    {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 800px;
-    }
+      .game-left 
+      {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 800px;
+      }
 
-    .screenshot-grid 
-    {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      width: 800px;
-      margin-bottom: 15px;
-    }
+      .screenshot-grid 
+      {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 800px;
+        margin-bottom: 15px;
+      }
 
-    .screenshot-grid img 
-    {
-      width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      transition: transform 0.2s;
-    }
+      .screenshot-grid img 
+      {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
 
-    .download-link 
-    {
-      display: inline-block;
-      width: 754px;
-      font-size: 18px;
-      font-weight: bold;
-      color: white;
-      background-color: #6667AB;
-      text-decoration: none;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 5px;
-      text-align: center;
-      transition: background-color 0.3s, color 0.3s, border 0.3s;
-      margin-top: 10px;
-      cursor: pointer;
-    }
+      .download-link 
+      {
+        display: inline-block;
+        width: 754px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background-color: #6667AB;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
+        margin-top: 10px;
+        cursor: pointer;
+      }
 
-    .download-link:hover 
-    {
-      background-color: white;
-      color: #6667AB;
-      border: 2px solid #6667AB;
-    }
+      .download-link:hover 
+      {
+        background-color: white;
+        color: #6667AB;
+        border: 2px solid #6667AB;
+      }
 
-    .game-right 
-    {
-      display: flex;
-      flex-direction: column;
-      margin-left: 100px;
-    }
+      .game-right 
+      {
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+      }
 
-    .game-title 
-    {
-      font-size: 40px;
-      font-weight: 800;
-      margin-bottom: 30px;
-      color: #ffd89d;
-    }
+      .game-title 
+      {
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #ffd89d;
+      }
 
-    .game-text 
-    {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.6;
-      color: white;
-    }
+      .game-text 
+      {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6;
+        color: white;
+      }
 
-    footer 
-    {
-      background-color: #3f405e;
-      color: white;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-    }
+      footer 
+      {
+        background-color: #3f405e;
+        color: white;
+        padding: 15px 30px;
+        font-size: 16px;
+        font-weight: bold;
+      }
 
-    a 
-    {
-      text-decoration: none;
-      color: inherit;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="name">
-      <a href="../index.html">Kim So Hyeon</a>
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="name">
+        <a href="../Sub_Page/SubPage.html">Kim So Hyeon</a>
+      </div>
+      <div class="title">
+        <a href="../Sub_Page/SubPage.html">Portfolio</a>
+      </div>
+
+      <hr class="divider" />
+      <div class="game-description">
+        기존 게임 세계관과 어울리는 신규 캐릭터 및 콘텐츠를 제안한 기획서입니다. <br>
+      </div>
+      <hr class="divider" />
     </div>
-    <div class="title">
-      <a href="../index.html">Portfolio</a>
-    </div>
 
-    <hr class="divider" />
-    <div class="game-description">
-      기존 게임 세계관과 어울리는 신규 캐릭터 및 콘텐츠를 제안한 기획서입니다. <br>
-    </div>
-    <hr class="divider" />
-  </div>
-
-  <div class="colored-section">
-    <!-- 쿠킹덤 캐릭터 제안서 -->
-    <div class="game-block">
-      <div class="game-content">
-        <div class="game-left">
-          <div class="screenshot-grid">
-            <img src="./Image/1.png" alt="스크린샷1" />
-            <img src="./Image/2.png" alt="스크린샷2" />
-            <img src="./Image/3.png" alt="스크린샷3" />
-            <img src="./Image/4.png" alt="스크린샷4" />
+    <div class="colored-section">
+      <!-- 쿠킹덤 캐릭터 제안서 -->
+      <div class="game-block">
+        <div class="game-content">
+          <div class="game-left">
+            <div class="screenshot-grid">
+              <img src="./Image/1.png" alt="스크린샷1" />
+              <img src="./Image/2.png" alt="스크린샷2" />
+              <img src="./Image/3.png" alt="스크린샷3" />
+              <img src="./Image/4.png" alt="스크린샷4" />
+            </div>
+            <a href="Files/쿠키런 킹덤_신규 쿠키 기획서.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
           </div>
-          <a href="Files/쿠키런 킹덤_신규 쿠키 기획서.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
+          <div class="game-right">
+            <div class="game-title">쿠키런: 킹덤 - 신규 캐릭터 제안서</div>
+            <div class="game-text">
+              “그거 알아...? 한밤중 중앙 계단 2.5층 거울 앞에서 <br>
+              『거울이여, 나를 거울 너머로 인도해 다오』라고 외치면…  <br>
+              거울 너머 존재가 거울 세계로 끌고 간대.”  <br><br>
+
+              소문엔 관심 없는 척했지만, 호기심을 참지 못해 주문을 외워버린 유세빈. <br>
+              그러나 그 학교 괴담은 진짜였다... <br><br>
+
+              거울 세계에서 같은 처지의 학생들을 만나 함께 탈출을 시도하지만,  <br>
+              이 학교에는 뭔가 심상치 않은 일이 벌어지고 있다. <br>
+              대체 세령고등학교에선 무슨 일이 벌어졌던 걸까?  <br><br>
+
+              <b>■ 게임 소개</b><br>
+              “거울 너머”는 스트레스 게이지가 쌓이는 것을 관리하며 거울 세계를 무사히 빠져나가<br>
+              학교의 진실을 밝혀내야 하는 호러 어드벤처 게임입니다.<br><br>
+            </div>
+          </div>
         </div>
-        <div class="game-right">
-          <div class="game-title">쿠키런: 킹덤 - 신규 캐릭터 제안서</div>
-          <div class="game-text">
-            “그거 알아...? 한밤중 중앙 계단 2.5층 거울 앞에서 <br>
-            『거울이여, 나를 거울 너머로 인도해 다오』라고 외치면…  <br>
-            거울 너머 존재가 거울 세계로 끌고 간대.”  <br><br>
+      </div>
 
-            소문엔 관심 없는 척했지만, 호기심을 참지 못해 주문을 외워버린 유세빈. <br>
-            그러나 그 학교 괴담은 진짜였다... <br><br>
+      <hr class="divider" style="border-top: 2px solid white; margin: 130px 0; width: 100%;" />
 
-            거울 세계에서 같은 처지의 학생들을 만나 함께 탈출을 시도하지만,  <br>
-            이 학교에는 뭔가 심상치 않은 일이 벌어지고 있다. <br>
-            대체 세령고등학교에선 무슨 일이 벌어졌던 걸까?  <br><br>
+      <!-- 버섯커 키우기 컨텐츠 제안서 -->
+      <div class="game-block">
+        <div class="game-content">
+          <div class="game-left">
+            <div class="screenshot-grid">
+              <img src="./Image/1.png" alt="스크린샷5" />
+              <img src="./Image/2.png" alt="스크린샷6" />
+              <img src="./Image/3.png" alt="스크린샷7" />
+              <img src="./Image/4.png" alt="스크린샷8" />
+            </div>
+            <a href="Files/버섯커 키우기_컨텐츠_제안서.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
+          </div>
+          <div class="game-right">
+            <div class="game-title">버섯커 키우기 - 흑화된 날씨 요정</div>
+            <div class="game-text">
+              <b>■ 게임 소개</b><br>
+              "마녀 과자가게"는 귀여운 꼬마 마녀가 과자집을 제작해주는 건축 시뮬레이션 게임으로,<br>
+              손님이 요청한 과자잡대로 제한 시간 내에 제작 해야하는 게임입니다.
+            </div>
+          </div>
 
-            <b>■ 게임 소개</b><br>
-            “거울 너머”는 스트레스 게이지가 쌓이는 것을 관리하며 거울 세계를 무사히 빠져나가<br>
-            학교의 진실을 밝혀내야 하는 호러 어드벤처 게임입니다.<br><br>
+          <hr class="divider" style="border-top: 2px solid white; margin: 80px 0 20px 0; width: 100%;" />
+
+          <div style="text-align: center; margin-top: -11px;">
+            <a href="../Sub_Page/SubPage.html"
+              style="padding: 15px 26px;
+                     background-color: #f2f2f2;
+                     color: #333;
+                     border-radius: 8px;
+                     text-decoration: none;
+                     font-weight: bold;">
+              🔍 다른 항목 보러가기
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <hr class="divider" style="border-top: 2px solid white; margin: 130px 0; width: 100%;" />
-
-    <!-- 버섯커 키우기 컨텐츠 제안서 -->
-    <div class="game-block">
-      <div class="game-content">
-        <div class="game-left">
-          <div class="screenshot-grid">
-            <img src="./Image/1.png" alt="스크린샷5" />
-            <img src="./Image/2.png" alt="스크린샷6" />
-            <img src="./Image/3.png" alt="스크린샷7" />
-            <img src="./Image/4.png" alt="스크린샷8" />
-          </div>
-          <a href="Files/버섯커 키우기_컨텐츠_제안서.pdf" target="_blank" class="download-link">포토폴리오 다운로드</a>
-        </div>
-        <div class="game-right">
-          <div class="game-title">버섯커 키우기 - 흑화된 날씨 요정</div>
-          <div class="game-text">
-            <b>■ 게임 소개</b><br>
-            "마녀 과자가게"는 귀여운 꼬마 마녀가 과자집을 제작해주는 건축 시뮬레이션 게임으로,<br>
-            손님이 요청한 과자잡대로 제한 시간 내에 제작 해야하는 게임입니다.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <p>
-      전화번호 : 010-4617-8465 <br />
-      이메일 : tonightornever1016@naver.com
-    </p>
-  </footer>
-</body>
+    <footer>
+      <p>
+        전화번호 : 010-4617-8465 <br />
+        이메일 : tonightornever1016@naver.com
+      </p>
+    </footer>
+  </body>
 </html>
