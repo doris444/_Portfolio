@@ -83,3 +83,86 @@ h2
 {
   background-color: #6667AB;
 }
+
+@media (max-width: 1024px) {
+  .horizontal-bar {
+    top: 15%;
+    width: 100vw;
+    height: 70px;
+  }
+
+  .vertical-bar {
+    left: 10%;
+    width: 60px;
+    height: 100vh;
+  }
+
+  .name {
+    top: 300px;
+    left: 50%;
+  }
+
+  .title {
+    top: 380px;
+    left: 50%;
+  }
+
+  .button-wrapper {
+    top: 550px;
+    left: 50%;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .button {
+    width: 240px;
+    height: 70px;
+    font-size: 28px;
+    line-height: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .horizontal-bar {
+    top: 12%;
+    height: 50px;
+  }
+
+  .vertical-bar {
+    left: 5%;
+    width: 40px;
+  }
+
+  .name {
+    top: 250px;
+  }
+
+  .title {
+    top: 320px;
+  }
+
+  .button-wrapper {
+    top: 480px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .button {
+    width: 200px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 60px;
+  }
+}
