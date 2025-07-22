@@ -9,105 +9,84 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- 내장 스타일 -->
   <style>
-    /* 데스크탑 애니메이션 */
-    @keyframes slideToNameDesktop 
-    {
+    /* 애니메이션 */
+    @keyframes slideToNameDesktop {
       from { left: 41%; opacity: 0; }
-      to { left: 48%; opacity: 1; }
+      to   { left: 48%; opacity: 1; }
     }
 
     @keyframes slideToTitleDesktop {
       from { left: 60%; opacity: 0; }
-      to { left: 54%; opacity: 1; }
+      to   { left: 54%; opacity: 1; }
     }
 
-    .name 
-    {
+    @keyframes slideToNameMobile {
+      from { left: 41%; opacity: 0; }
+      to   { left: 56%; opacity: 1; }
+    }
+
+    @keyframes slideToTitleMobile {
+      from { left: 67%; opacity: 0; }
+      to   { left: 60%; opacity: 1; }
+    }
+
+    .name {
       position: absolute;
-      /* 픽셀 대신 vh로 변경 */
-      top: calc(var(--vh, 1vh) * 40);
+      top: 38vh;
       left: 48%;
       transform: translateX(-50%);
       opacity: 0;
       animation: slideToNameDesktop 0.6s ease-out forwards;
     }
 
-    .title 
-    {
+    .title {
       position: absolute;
-      top: calc(var(--vh, 1vh) * 50);
+      top: 46vh;
       left: 54%;
       transform: translateX(-50%);
       opacity: 0;
       animation: slideToTitleDesktop 0.5s ease-out forwards;
     }
 
-    .button-wrapper 
-    {
+    .button-wrapper {
       position: absolute;
-      top: calc(var(--vh, 1vh) * 80);
+      top: 72vh;
       left: 46%;
       transform: translateX(-50%);
     }
 
-    /* 미디어쿼리 - 모바일 애니메이션 */
-    @media (max-width: 1024px) 
-    {
-      @keyframes slideToNameMobile 
-      {
-        from { left: 41%; opacity: 0; }
-        to { left: 56%; opacity: 1; }
-      }
-
-      @keyframes slideToTitleMobile 
-      {
-        from { left: 67%; opacity: 0; }
-        to { left: 60%; opacity: 1; }
-      }
-
-      .name 
-      {
-        top: calc(var(--vh, 1vh) * 35);
+    /* 모바일 대응 */
+    @media (max-width: 1024px) {
+      .name {
+        top: 33vh;
         left: 56%;
-        transform: translateX(-50%);
-        opacity: 0;
         animation: slideToNameMobile 0.6s ease-out forwards;
       }
 
-      .title 
-      {
-        top: calc(var(--vh, 1vh) * 40);
+      .title {
+        top: 41vh;
         left: 60%;
-        transform: translateX(-50%);
-        opacity: 0;
         animation: slideToTitleMobile 0.5s ease-out forwards;
       }
 
-      .button-wrapper 
-      {
-        top: calc(var(--vh, 1vh) * 55);
+      .button-wrapper {
+        top: 65vh;
         left: 55%;
-        transform: translateX(-50%);
       }
     }
 
-    @media (max-width: 600px) 
-    {
-      .name 
-      {
-        top: calc(var(--vh, 1vh) * 25);
+    @media (max-width: 600px) {
+      .name {
+        top: 30vh;
       }
 
-      .title 
-      {
-        top: calc(var(--vh, 1vh) * 32);
+      .title {
+        top: 38vh;
       }
 
-      .button-wrapper 
-      {
-        top: calc(var(--vh, 1vh) * 48);
+      .button-wrapper {
+        top: 60vh;
       }
     }
   </style>
@@ -129,16 +108,5 @@
       <a href="Sub_Page/SubPage.html" class="button">보러가기</a>
     </div>
   </div>
-
-  <!-- 모바일 브라우저 환경에서 뷰포트 높이 문제 해결용 JS -->
-  <script>
-    function setVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    window.addEventListener('resize', setVh);
-    window.addEventListener('load', setVh);
-  </script>
 </body>
 </html>
