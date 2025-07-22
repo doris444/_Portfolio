@@ -14,8 +14,7 @@
     /* 데스크탑 애니메이션 */
     @keyframes slideToNameDesktop 
     {
-      from 
-      { left: 41%; opacity: 0; }
+      from { left: 41%; opacity: 0; }
       to { left: 48%; opacity: 1; }
     }
 
@@ -27,7 +26,8 @@
     .name 
     {
       position: absolute;
-      top: 390px;
+      /* 픽셀 대신 vh로 변경 */
+      top: calc(var(--vh, 1vh) * 40);
       left: 48%;
       transform: translateX(-50%);
       opacity: 0;
@@ -37,7 +37,7 @@
     .title 
     {
       position: absolute;
-      top: 470px;
+      top: calc(var(--vh, 1vh) * 50);
       left: 54%;
       transform: translateX(-50%);
       opacity: 0;
@@ -47,7 +47,7 @@
     .button-wrapper 
     {
       position: absolute;
-      top: 780px;
+      top: calc(var(--vh, 1vh) * 80);
       left: 46%;
       transform: translateX(-50%);
     }
@@ -69,7 +69,7 @@
 
       .name 
       {
-        top: 330px;
+        top: calc(var(--vh, 1vh) * 35);
         left: 56%;
         transform: translateX(-50%);
         opacity: 0;
@@ -78,7 +78,7 @@
 
       .title 
       {
-        top: 380px;
+        top: calc(var(--vh, 1vh) * 40);
         left: 60%;
         transform: translateX(-50%);
         opacity: 0;
@@ -87,7 +87,7 @@
 
       .button-wrapper 
       {
-        top: 550px;
+        top: calc(var(--vh, 1vh) * 55);
         left: 55%;
         transform: translateX(-50%);
       }
@@ -97,17 +97,17 @@
     {
       .name 
       {
-        top: 250px;
+        top: calc(var(--vh, 1vh) * 25);
       }
 
       .title 
       {
-        top: 320px;
+        top: calc(var(--vh, 1vh) * 32);
       }
 
       .button-wrapper 
       {
-        top: 480px;
+        top: calc(var(--vh, 1vh) * 48);
       }
     }
   </style>
@@ -129,5 +129,16 @@
       <a href="Sub_Page/SubPage.html" class="button">보러가기</a>
     </div>
   </div>
+
+  <!-- 모바일 브라우저 환경에서 뷰포트 높이 문제 해결용 JS -->
+  <script>
+    function setVh() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', setVh);
+  </script>
 </body>
 </html>
