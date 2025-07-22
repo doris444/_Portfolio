@@ -155,71 +155,143 @@
       text-decoration: none;
       color: inherit;
     }
-    @media (max-width: 1024px) {
-  .container, .colored-section {
+@media (max-width: 1024px) 
+{
+  .container, .colored-section 
+  {
     padding: 30px 30px;
   }
 
-  .title {
+  .title 
+  {
     font-size: 50px;
   }
 
-  .name {
+  .name 
+  {
     font-size: 22px;
   }
 
-  .game-description, .game-text {
+  .game-description, .game-text 
+  {
     font-size: 16px;
   }
 
-  .game-content {
+  .game-content 
+  {
     flex-direction: column;
     gap: 60px;
   }
 
-  .game-left, .game-right {
+  .game-left, .game-right 
+  {
     width: 100%;
     margin-left: 0;
   }
 
-  .screenshot-grid, .screenshot-grid.witch {
+  .screenshot-grid, .screenshot-grid.witch 
+  {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
 
-  .download-link {
-    width: 100%;
+  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
+  .game-right 
+  {
+    padding-left: 20px;
+  }
+  .game-title 
+  {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .game-text 
+  {
+    text-align: left;
     font-size: 16px;
   }
 
-  .divider {
+  /* 다운로드 버튼 너비 및 위치 조정 */
+  .download-link 
+  {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  /* 다른 항목 보러가기 버튼 위치 조정 */
+  .other-items-button 
+  {
+    margin-top: -40px;
+    display: block;
+    text-align: center;
+  }
+
+  .divider 
+  {
     width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .title {
+@media (max-width: 600px) 
+{
+  .title 
+  {
     font-size: 36px;
   }
 
-  .name {
+  .name 
+  {
     font-size: 18px;
   }
 
-  .game-description, .game-text {
+  .game-description, .game-text 
+  {
     font-size: 14px;
   }
 
-  .game-title {
+  .game-title 
+  {
     font-size: 28px;
   }
 
-  .download-link {
+  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
+  .game-right 
+  {
+    padding-left: 15px;
+  }
+  .game-title 
+  {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .game-text 
+  {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  /* 다운로드 버튼 너비 및 위치 조정 */
+  .download-link 
+  {
+    width: 100%;
     font-size: 14px;
     padding: 8px 16px;
   }
 
-  footer {
+  /* 다른 항목 보러가기 버튼 위치 조정 */
+  .other-items-button 
+  {
+    margin-top: -30px !important;
+    display: block;
+    text-align: center;
+  }
+
+  footer 
+  {
     font-size: 14px;
     padding: 10px 20px;
   }
@@ -303,6 +375,7 @@
 
         <div style="text-align: center; margin-top: -11px;">
           <a href="../Sub_Page/SubPage.html"
+             class="other-items-button"
              style="padding: 15px 26px;
                     background-color: #f2f2f2;
                     color: #333;
