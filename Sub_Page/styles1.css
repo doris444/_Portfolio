@@ -75,8 +75,10 @@ footer
 }
 
 /* 1024px 이하 */
-@media (max-width: 1024px) {
-  .button-wrapper {
+@media (max-width: 1024px) 
+{
+  .button-wrapper 
+  {
     flex-wrap: wrap;
     gap: 20px;
     top: 160px;
@@ -86,7 +88,8 @@ footer
     max-width: calc(100% - 20px);  /* 여백 고려 */
   }
 
-  .button {
+  .button 
+  {
     width: calc(50% - 10px);
     aspect-ratio: 2 / 3;
     font-size: 16px;
@@ -94,14 +97,16 @@ footer
     overflow: visible;
   }
 
-  .button img {
+  .button img 
+  {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .label {
+  .label 
+  {
     position: absolute;
     top: 60%;
     left: 10%;                    /* 카드 내부 왼쪽 여백 유지 */
@@ -111,7 +116,8 @@ footer
     pointer-events: none;
   }
 
-  .sublabel {
+  .sublabel 
+  {
     position: absolute;
     top: 75%;
     left: 10%;                   /* 카드 내부 왼쪽 여백 유지 */
@@ -121,13 +127,15 @@ footer
     pointer-events: none;
   }
 
-  .title {
+  .title 
+  {
     font-size: 36px;
     top: 30px;
     left: 20px;
   }
 
-  .name {
+  .name 
+  {
     font-size: 16px;
     top: 10px;
     left: 20px;
@@ -135,8 +143,10 @@ footer
 }
 
 /* 600px 이하 */
-@media (max-width: 600px) {
-  .button-wrapper {
+@media (max-width: 600px) 
+{
+  .button-wrapper 
+  {
     flex-wrap: wrap;
     gap: 16px;
     top: 140px;
@@ -146,7 +156,8 @@ footer
     margin: 0 auto;
   }
 
-  .button {
+  .button 
+  {
     width: calc(50% - 8px);
     aspect-ratio: 2 / 3;
     font-size: 14px;
@@ -154,14 +165,16 @@ footer
     overflow: visible;
   }
 
-  .button img {
+  .button img 
+  {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .label {
+  .label 
+  {
     position: absolute;
     top: 60%;
     left: 10%;                   /* 카드 내부 왼쪽 여백 유지 */
@@ -171,7 +184,8 @@ footer
     pointer-events: none;
   }
 
-  .sublabel {
+  .sublabel 
+  {
     position: absolute;
     top: 75%;
     left: 10%;                   /* 카드 내부 왼쪽 여백 유지 */
@@ -181,19 +195,22 @@ footer
     pointer-events: none;
   }
 
-  .title {
+  .title 
+  {
     font-size: 28px;
     top: 20px;
     left: 15px;
   }
 
-  .name {
+  .name 
+  {
     font-size: 14px;
     top: 5px;
     left: 15px;
   }
 
-  footer {
+  footer 
+  {
     font-size: 12px;
     padding: 8px 16px;
   }
