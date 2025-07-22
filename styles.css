@@ -1,3 +1,4 @@
+/* 기본 바디 */
 body 
 {
   margin: 0;
@@ -7,6 +8,7 @@ body
   overflow: hidden;
 }
 
+/* 오버레이 전체 */
 .overlay 
 {
   position: relative;
@@ -15,7 +17,7 @@ body
   background-color: white;
 }
 
-/* 가로 막대 */
+/* 가로 세로 막대 */
 .horizontal-bar 
 {
   position: absolute;
@@ -26,7 +28,6 @@ body
   background-color: rgba(72, 72, 72, 0.8);
 }
 
-/* 세로 막대 */
 .vertical-bar 
 {
   position: absolute;
@@ -37,16 +38,36 @@ body
   background-color: rgba(72, 72, 72, 0.8);
 }
 
-.content 
+/* 이름, 타이틀, 버튼 위치 & 애니메이션 */
+.name 
 {
   position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 390px;
+  left: 48%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: slideToNameDesktop 0.6s ease-out forwards;
 }
 
-/* Portfolio 텍스트 */
+.title 
+{
+  position: absolute;
+  top: 470px;
+  left: 54%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: slideToTitleDesktop 0.5s ease-out forwards;
+}
+
+.button-wrapper 
+{
+  position: absolute;
+  top: 780px;
+  left: 46%;
+  transform: translateX(-50%);
+}
+
+/* 폰트 크기 */
 h1 
 {
   font-size: 170px;
@@ -54,16 +75,14 @@ h1
   font-weight: 900;
 }
 
-/* Kim So Hyeon 텍스트 */
 h2 
 {
   font-size: 70px;
-  margin: 0;
+  margin: 0 0 10px 0;
   font-weight: 900;
-  margin-bottom: 10px;
 }
 
-/* 바로가기 버튼 */
+/* 버튼 스타일 */
 .button 
 {
   display: inline-block;
@@ -74,8 +93,8 @@ h2
   text-decoration: none;
   border-radius: 15px;
   font-size: 52px;
-  line-height: 90px;         
-  text-align: center;       
+  line-height: 90px;
+  text-align: center;
   transition: background-color 0.3s;
 }
 
@@ -84,43 +103,73 @@ h2
   background-color: #6667AB;
 }
 
-@media (max-width: 1024px) {
-  .horizontal-bar {
+/* 데스크탑 애니메이션 keyframes */
+@keyframes slideToNameDesktop 
+{
+  from { left: 41%; opacity: 0; }
+  to { left: 48%; opacity: 1; }
+}
+
+@keyframes slideToTitleDesktop 
+{
+  from { left: 60%; opacity: 0; }
+  to { left: 54%; opacity: 1; }
+}
+
+/* 모바일 대응: 1024px 이하 */
+@media (max-width: 1024px) 
+{
+  .horizontal-bar 
+  {
     top: 15%;
     width: 100vw;
     height: 70px;
   }
 
-  .vertical-bar {
+  .vertical-bar 
+  {
     left: 10%;
     width: 60px;
     height: 100vh;
   }
 
-  .name {
+  .name 
+  {
     top: 300px;
     left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    animation: none;
   }
 
-  .title {
+  .title 
+  {
     top: 380px;
     left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    animation: none;
   }
 
-  .button-wrapper {
+  .button-wrapper 
+  {
     top: 550px;
     left: 50%;
+    transform: translateX(-50%);
   }
 
-  h1 {
+  h1 
+  {
     font-size: 80px;
   }
 
-  h2 {
+  h2 
+  {
     font-size: 40px;
   }
 
-  .button {
+  .button 
+  {
     width: 240px;
     height: 70px;
     font-size: 28px;
@@ -128,38 +177,48 @@ h2
   }
 }
 
-@media (max-width: 600px) {
-  .horizontal-bar {
+/* 모바일 대응: 600px 이하 */
+@media (max-width: 600px) 
+{
+  .horizontal-bar 
+  {
     top: 12%;
     height: 50px;
   }
 
-  .vertical-bar {
+  .vertical-bar 
+  {
     left: 5%;
     width: 40px;
   }
 
-  .name {
+  .name 
+  {
     top: 250px;
   }
 
-  .title {
+  .title 
+  {
     top: 320px;
   }
 
-  .button-wrapper {
+  .button-wrapper 
+  {
     top: 480px;
   }
 
-  h1 {
+  h1 
+  {
     font-size: 60px;
   }
 
-  h2 {
+  h2 
+  {
     font-size: 32px;
   }
 
-  .button {
+  .button 
+  {
     width: 200px;
     height: 60px;
     font-size: 24px;

@@ -1,36 +1,27 @@
 <!doctype html>
 <html lang="ko">
 <head> 
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>포토폴리오</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- 폰트 및 외부 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 내장 스타일 -->
   <style>
-    /* 이름 애니메이션 */
-    @keyframes slideToName 
+    /* 데스크탑 애니메이션 */
+    @keyframes slideToNameDesktop 
     {
-      from {
-        left: 41%;
-        opacity: 0;
-      }
-      to {
-        left: 45;
-        opacity: 1;
-      }
+      from 
+      { left: 41%; opacity: 0; }
+      to { left: 48%; opacity: 1; }
     }
 
-    /* 포트폴리오 애니메이션 */
-    @keyframes slideToTitle 
-    {
-      from {
-        left: 60%;
-        opacity: 0;
-      }
-      to {
-        left: 54%;
-        opacity: 1;
-      }
+    @keyframes slideToTitleDesktop {
+      from { left: 60%; opacity: 0; }
+      to { left: 54%; opacity: 1; }
     }
 
     .name 
@@ -40,7 +31,7 @@
       left: 48%;
       transform: translateX(-50%);
       opacity: 0;
-      animation: slideToName 0.6s ease-out forwards;
+      animation: slideToNameDesktop 0.6s ease-out forwards;
     }
 
     .title 
@@ -50,7 +41,7 @@
       left: 54%;
       transform: translateX(-50%);
       opacity: 0;
-      animation: slideToTitle 0.5s ease-out forwards;
+      animation: slideToTitleDesktop 0.5s ease-out forwards;
     }
 
     .button-wrapper 
@@ -59,6 +50,65 @@
       top: 780px;
       left: 46%;
       transform: translateX(-50%);
+    }
+
+    /* 미디어쿼리 - 모바일 애니메이션 */
+    @media (max-width: 1024px) 
+    {
+      @keyframes slideToNameMobile 
+      {
+        from { left: 41%; opacity: 0; }
+        to { left: 56%; opacity: 1; }
+      }
+
+      @keyframes slideToTitleMobile 
+      {
+        from { left: 67%; opacity: 0; }
+        to { left: 60%; opacity: 1; }
+      }
+
+      .name 
+      {
+        top: 330px;
+        left: 56%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: slideToNameMobile 0.6s ease-out forwards;
+      }
+
+      .title 
+      {
+        top: 380px;
+        left: 60%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: slideToTitleMobile 0.5s ease-out forwards;
+      }
+
+      .button-wrapper 
+      {
+        top: 550px;
+        left: 55%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 600px) 
+    {
+      .name 
+      {
+        top: 250px;
+      }
+
+      .title 
+      {
+        top: 320px;
+      }
+
+      .button-wrapper 
+      {
+        top: 480px;
+      }
     }
   </style>
 </head>
