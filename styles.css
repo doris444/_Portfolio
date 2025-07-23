@@ -1,5 +1,6 @@
 /* 기본 바디 */
-body {
+body 
+{
   margin: 0;
   padding: 0;
   font-family: 'NanumSquare', sans-serif;
@@ -8,7 +9,8 @@ body {
 }
 
 /* 오버레이 전체 */
-.overlay {
+.overlay 
+{
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -16,7 +18,8 @@ body {
 }
 
 /* 가로 세로 막대 */
-.horizontal-bar {
+.horizontal-bar 
+{
   position: absolute;
   top: 21%;
   left: 0;
@@ -25,7 +28,8 @@ body {
   background-color: rgba(72, 72, 72, 0.8);
 }
 
-.vertical-bar {
+.vertical-bar 
+{
   position: absolute;
   top: 0;
   left: 18%;
@@ -34,63 +38,53 @@ body {
   background-color: rgba(72, 72, 72, 0.8);
 }
 
-/* 공통 스타일 */
-.name, .title {
+/* 이름, 타이틀, 버튼 위치 & 애니메이션 */
+.name 
+{
   position: absolute;
-  left: 50%;
+  top: 38vh;
+  left: 48%;
   transform: translateX(-50%);
   opacity: 0;
+  animation: slideToNameDesktop 0.6s ease-out forwards;
 }
 
-.name h2, .title h1 {
-  white-space: nowrap; /* 줄바꿈 방지 */
-}
-
-/* 애니메이션 */
-@keyframes slideInUp {
-  from {
-    transform: translate(-50%, 30px);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
-}
-
-/* 데스크탑 위치 */
-.name {
-  top: 380px;
-  animation: slideInUp 0.6s ease-out forwards;
-}
-
-.title {
-  top: 470px;
-  animation: slideInUp 0.5s ease-out forwards;
-}
-
-.button-wrapper {
-  position: absolute;
-  top: 780px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* 폰트 크기 */
-h1 {
-  font-size: 170px;
-  margin: 0;
-  font-weight: 900;
-}
-
-h2 {
+.name h2 
+{
+  white-space: nowrap;
   font-size: 70px;
   margin: 0 0 10px 0;
   font-weight: 900;
 }
 
+.title 
+{
+  position: absolute;
+  top: 46vh;
+  left: 54%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: slideToTitleDesktop 0.5s ease-out forwards;
+}
+
+.title h1 
+{
+  font-size: 170px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.button-wrapper 
+{
+  position: absolute;
+  top: 72vh;
+  left: 46%;
+  transform: translateX(-50%);
+}
+
 /* 버튼 스타일 */
-.button {
+.button 
+{
   display: inline-block;
   width: 384px;
   height: 90px;
@@ -104,90 +98,142 @@ h2 {
   transition: background-color 0.3s;
 }
 
-.button:hover {
+.button:hover 
+{
   background-color: #6667AB;
 }
 
+/* 데스크탑 애니메이션 */
+@keyframes slideToNameDesktop 
+{
+  from { left: 41%; opacity: 0; }
+  to   { left: 48%; opacity: 1; }
+}
+
+@keyframes slideToTitleDesktop 
+{
+  from { left: 60%; opacity: 0; }
+  to   { left: 54%; opacity: 1; }
+}
+
+/* 모바일 애니메이션 */
+@keyframes slideToNameMobile 
+{
+  from { left: 41%; opacity: 0; }
+  to   { left: 50%; opacity: 1; }
+}
+
+@keyframes slideToTitleMobile 
+{
+  from { left: 60%; opacity: 0; }
+  to   { left: 50%; opacity: 1; }
+}
+
 /* 태블릿 이하 */
-@media (max-width: 1024px) {
-  .horizontal-bar {
+@media (max-width: 1024px) 
+{
+  .horizontal-bar 
+  {
     top: 15%;
     width: 100vw;
     height: 70px;
   }
 
-  .vertical-bar {
+  .vertical-bar 
+  {
     left: 10%;
     width: 60px;
     height: 100vh;
   }
 
-  .name {
-    top: 300px;
-    animation: slideInUp 0.6s ease-out forwards;
+  .name 
+  {
+    top: 310px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 32px));  /* 왼쪽으로 20px 더 이동 */
+    animation: slideToNameMobile 0.6s ease-out forwards;
   }
 
-  .title {
-    top: 380px;
-    animation: slideInUp 0.5s ease-out forwards;
-  }
-
-  .button-wrapper {
-    top: 550px;
-  }
-
-  h1 {
-    font-size: 80px;
-  }
-
-  h2 {
+  .name h2 
+  {
     font-size: 40px;
   }
 
-  .button {
-    width: 240px;
-    height: 70px;
-    font-size: 28px;
-    line-height: 70px;
+  .title 
+  {
+    top: 360px;
+    left: 50%;
+    transform: translateX(calc(-50% + 20px));  /* 왼쪽으로 20px 더 이동 */
+    animation: slideToTitleMobile 0.5s ease-out forwards;
+  }
+
+  .title h1 
+  {
+    font-size: 90px;
+  }
+
+  .button-wrapper 
+  {
+    top: 580px;
+    left: 47%;
+    transform: translateX(-50%);
+  }
+
+  .button 
+  {
+    width: 280px;
+    height: 75px;
+    font-size: 32px;
+    line-height: 75px;
   }
 }
 
 /* 모바일 이하 */
-@media (max-width: 600px) {
-  .horizontal-bar {
+@media (max-width: 600px) 
+{
+  .horizontal-bar 
+  {
     top: 12%;
     height: 50px;
   }
 
-  .vertical-bar {
+  .vertical-bar 
+  {
     left: 5%;
     width: 40px;
   }
 
-  .name {
-    top: 260px;
+  .name 
+  {
+    top: 270px;
   }
 
-  .title {
+  .name h2 
+  {
+    font-size: 36px;
+  }
+
+  .title 
+  {
     top: 340px;
   }
 
-  .button-wrapper {
-    top: 480px;
-  }
-
-  h1 {
+  .title h1 
+  {
     font-size: 64px;
   }
 
-  h2 {
-    font-size: 32px;
+  .button-wrapper 
+  {
+    top: 480px;
   }
 
-  .button {
-    width: 200px;
+  .button 
+  {
+    width: 220px;
     height: 60px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 60px;
   }
 }
