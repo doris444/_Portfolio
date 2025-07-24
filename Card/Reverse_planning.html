@@ -155,6 +155,25 @@
       text-decoration: none;
       color: inherit;
     }
+
+    /* 목차 두 칼럼 가로 배열 */
+    .toc-container 
+    {
+      display: flex;
+      gap: 70px;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+
+    .toc-column 
+    {
+      flex: 1;
+      font-size: 20px;
+      line-height: 1.6;
+      word-break: break-word;
+      white-space: normal;
+    }
+
 @media (max-width: 1024px) 
 {
   .container, .colored-section 
@@ -234,6 +253,22 @@
   {
     width: 100%;
   }
+
+  .toc-container 
+    {
+      gap: 10px !important;          /* gap 좁혀서 붙도록 */
+      flex-wrap: nowrap;    /* 무조건 한 줄 */
+      justify-content: space-between;  /* 좌우 끝으로 정렬 */
+    }
+
+    .toc-column 
+    {
+      flex: 0 0 48%;        /* 두 칼럼이 딱 붙도록 너비 고정 */
+      font-size: 16px;      /* 폰트 작게 */
+      white-space: normal;  
+      word-break: break-word;
+      margin: 0;
+    }
 }
 
 @media (max-width: 600px) 
@@ -295,6 +330,22 @@
     font-size: 14px;
     padding: 10px 20px;
   }
+
+  .toc-container 
+    {
+      gap: 10px !important;             /* gap 좁혀서 붙도록 */
+      flex-wrap: nowrap;    /* 무조건 한 줄 */
+      justify-content: space-between;  /* 좌우 끝으로 정렬 */
+    }
+
+    .toc-column 
+    {
+      flex: 0 0 48%;        /* 두 칼럼이 딱 붙도록 너비 고정 */
+      font-size: 14px;      /* 폰트 작게 */
+      white-space: normal;  
+      word-break: break-word;
+      margin: 0;
+    }
 }
   </style>
 </head>
@@ -332,16 +383,27 @@
           <div class="game-text">
             즐겨하는 스토리모드 중, <b style="color: #ffd89d;">'디비전 역할군 강화 시스템'</b>의 강화 요소를 역기획했습니다. <br>
               <h2><b>📑 목차</b> <br></h2>
-              <b>■ 역할군 강화 시스템 &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; ■ 능력 카드 - 등급 시작 카드  </b> <br>
-              - 기획 의도 &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp;  - 기획 의도  <br>                                            
-              - 능력 카드 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp;  - 파이어맨 등급 시작 카드 클래스 <br>               
-              - 능력 선택 UI &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; - 능력 카드 아이콘 파일 이름 규칙 <br>                  
-              - 능력 선택 완료 UI &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp;  - 능력 카드 해당 스킬 아이콘 파일 이름 규칙 <br>                                
-              - 인게임 UI <br>                        
-              - 능력 획득 및 강화 경로 클래스 <br>       
-              - 강화 파라미터 <br>                     
-              - 강화 작업대 인게임 및 애니메이션 <br>     
-              - 능력 카드 인게임 및 애니메이션 <br>       
+              <div class="toc-container">
+              <div class="toc-column">
+                <b>■ 역할군 강화 시스템</b><br>
+                - 기획 의도 <br>
+                - 능력 카드 <br>
+                - 능력 선택 UI <br>
+                - 능력 선택 완료 UI <br>
+                - 인게임 UI <br>
+                - 능력 획득 및 강화 경로 클래스 <br>
+                - 강화 파라미터 <br>
+                - 강화 작업대 인게임 및 애니메이션 <br>
+                - 능력 카드 인게임 및 애니메이션 <br>
+              </div>
+              <div class="toc-column">
+                <b>■ 능력 카드 - 등급 시작 카드</b><br>
+                - 기획 의도 <br>
+                - 파이어맨 등급 시작 카드 클래스 <br>
+                - 능력 카드 아이콘 파일 이름 규칙 <br>
+                <span style="white-space: nowrap;">- 능력 카드 해당 스킬 아이콘 파일 이름 규칙</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
