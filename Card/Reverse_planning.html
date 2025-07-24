@@ -118,11 +118,14 @@
       border: 2px solid #6667AB;
     }
 
+    /* 여기 수정됨: margin-left 대신 position/left로 조절 */
     .game-right 
     {
       display: flex;
       flex-direction: column;
-      margin-left: 100px;
+      position: relative;
+      left: 100px;  /* 기본 위치 조절값, 필요에 따라 조정 */
+      margin-left: 0;
     }
 
     .game-title 
@@ -156,11 +159,10 @@
       color: inherit;
     }
 
-    /* 목차 두 칼럼 가로 배열 */
     .toc-container 
     {
       display: flex;
-      gap: 70px;
+      gap: 0;
       max-width: 800px;
       margin-top: 20px;
     }
@@ -172,181 +174,204 @@
       line-height: 1.6;
       word-break: break-word;
       white-space: normal;
+      position: relative;
     }
 
-@media (max-width: 1024px) 
-{
-  .container, .colored-section 
-  {
-    padding: 30px 30px;
-  }
-
-  .title 
-  {
-    font-size: 50px;
-  }
-
-  .name 
-  {
-    font-size: 22px;
-  }
-
-  .game-description, .game-text 
-  {
-    font-size: 18px;
-  }
-
-  .game-content 
-  {
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  .game-left, .game-right 
-  {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .screenshot-grid, .screenshot-grid.witch 
-  {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-
-  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
-  .game-right 
-  {
-    padding-left: 20px;
-  }
-  .game-title 
-  {
-    text-align: left;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .game-text 
-  {
-    text-align: left;
-    font-size: 16px;
-  }
-
-  /* 다운로드 버튼 너비 및 위치 조정 */
-  .download-link 
-  {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 10px;
-  }
-
-  /* 다른 항목 보러가기 버튼 위치 조정 */
-  .other-items-button 
-  {
-    margin-top: 10px;
-    display: block;
-    text-align: center;
-  }
-
-  .divider 
-  {
-    width: 100%;
-  }
-
-  .toc-container 
+    .toc-left 
     {
-      gap: 10px !important;          /* gap 좁혀서 붙도록 */
-      flex-wrap: nowrap;    /* 무조건 한 줄 */
-      justify-content: space-between;  /* 좌우 끝으로 정렬 */
+      left: 0;
     }
 
-    .toc-column 
+    .toc-right 
     {
-      flex: 0 0 48%;        /* 두 칼럼이 딱 붙도록 너비 고정 */
-      font-size: 16px;      /* 폰트 작게 */
-      white-space: normal;  
-      word-break: break-word;
-      margin: 0;
+      left: 20px;
     }
-}
 
-@media (max-width: 600px) 
-{
-  .title 
-  {
-    font-size: 36px;
-  }
-
-  .name 
-  {
-    font-size: 18px;
-  }
-
-  .game-description, .game-text 
-  {
-    font-size: 14px;
-  }
-
-  .game-title 
-  {
-    font-size: 28px;
-  }
-
-  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
-  .game-right 
-  {
-    padding-left: 15px;
-  }
-  .game-title 
-  {
-    text-align: left;
-    margin-bottom: 15px;
-  }
-  .game-text 
-  {
-    text-align: left;
-    font-size: 14px;
-  }
-
-  /* 다운로드 버튼 너비 및 위치 조정 */
-  .download-link 
-  {
-    width: 100%;
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  /* 다른 항목 보러가기 버튼 위치 조정 */
-  .other-items-button 
-  {
-    margin-top: 20px !important;
-    display: block;
-    text-align: center;
-  }
-
-  footer 
-  {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .toc-container 
+    @media (max-width: 1024px) 
     {
-      gap: 10px !important;             /* gap 좁혀서 붙도록 */
-      flex-wrap: nowrap;    /* 무조건 한 줄 */
-      justify-content: space-between;  /* 좌우 끝으로 정렬 */
+      .container, .colored-section 
+      {
+        padding: 30px 30px;
+      }
+
+      .title 
+      {
+        font-size: 50px;
+      }
+
+      .name 
+      {
+        font-size: 22px;
+      }
+
+      .game-description, .game-text 
+      {
+        font-size: 18px;
+      }
+
+      .game-content 
+      {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .game-right
+      {
+         position: relative;
+         left: 0;
+         padding-left: 20px;
+         margin-left: 0; /* 혹시 있을 경우 초기화 */
+      }
+
+      .game-left 
+      {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .screenshot-grid, .screenshot-grid.witch 
+      {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+
+      .game-right 
+      {
+        left: 0;           /* 좌우 이동 초기화 */
+        padding-left: 20px; /* 필요시 padding 유지 */
+      }
+
+      .game-title 
+      {
+        text-align: left;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .game-text 
+      {
+        text-align: left;
+        font-size: 16px;
+      }
+
+      .download-link 
+      {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }
+
+      .other-items-button 
+      {
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+      }
+
+      .divider 
+      {
+        width: 100%;
+      }
+
+      .toc-container 
+      {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .toc-column 
+      {
+        position: relative;
+        width: 50%;
+        font-size: 16px;
+        white-space: normal;
+        word-break: break-word;
+        margin: 0;
+        padding: 0;
+      }
     }
 
-    .toc-column 
+    @media (max-width: 600px) 
     {
-      flex: 0 0 48%;        /* 두 칼럼이 딱 붙도록 너비 고정 */
-      font-size: 14px;      /* 폰트 작게 */
-      white-space: normal;  
-      word-break: break-word;
-      margin: 0;
+      .title 
+      {
+        font-size: 36px;
+      }
+
+      .name 
+      {
+        font-size: 18px;
+      }
+
+      .game-description, .game-text 
+      {
+        font-size: 14px;
+      }
+
+      .game-title 
+      {
+        font-size: 28px;
+      }
+
+      .game-right 
+      {
+        padding-left: 15px;
+      }
+
+      .game-title 
+      {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .game-text 
+      {
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .download-link 
+      {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .other-items-button 
+      {
+        margin-top: 20px !important;
+        display: block;
+        text-align: center;
+      }
+
+      footer 
+      {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .toc-container 
+      {
+        gap: 0 !important;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+
+      .toc-column 
+      {
+        flex: 0 0 48%;
+        font-size: 14px;
+        white-space: normal;
+        word-break: break-word;
+        margin: 0;
+        position: relative;
+        left: 0;
+      }
     }
-}
   </style>
 </head>
 <body>
@@ -382,9 +407,9 @@
           <div class="game-title">좀비고등학교 - 역할군 강화 역기획서</div>
           <div class="game-text">
             즐겨하는 스토리모드 중, <b style="color: #ffd89d;">'디비전 역할군 강화 시스템'</b>의 강화 요소를 역기획했습니다. <br>
-              <h2><b>📑 목차</b> <br></h2>
-              <div class="toc-container">
-              <div class="toc-column">
+            <h2><b>📑 목차</b> <br></h2>
+            <div class="toc-container">
+              <div class="toc-column toc-left">
                 <b>■ 역할군 강화 시스템</b><br>
                 - 기획 의도 <br>
                 - 능력 카드 <br>
@@ -396,7 +421,7 @@
                 - 강화 작업대 인게임 및 애니메이션 <br>
                 - 능력 카드 인게임 및 애니메이션 <br>
               </div>
-              <div class="toc-column">
+              <div class="toc-column toc-right">
                 <b>■ 능력 카드 - 등급 시작 카드</b><br>
                 - 기획 의도 <br>
                 - 파이어맨 등급 시작 카드 클래스 <br>
@@ -452,7 +477,6 @@
             🔍 다른 항목 보러가기
           </a>
         </div>
-
       </div>
     </div>
   </div>
