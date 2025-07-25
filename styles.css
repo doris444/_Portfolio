@@ -130,7 +130,7 @@ body
 }
 
 /* 태블릿 이하 */
-@media (max-width: 1024px) 
+@media all and (max-width: 1024px) 
 {
   .horizontal-bar 
   {
@@ -190,7 +190,7 @@ body
 }
 
 /* 모바일 이하 */
-@media (max-width: 600px) 
+@media all and (max-width: 600px) 
 {
   .horizontal-bar 
   {
