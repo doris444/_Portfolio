@@ -129,8 +129,8 @@ body
   to   { left: 50%; opacity: 1; }
 }
 
-/* 태블릿 이하 */
-@media all and (max-width: 1024px) 
+/* 태블릿 */
+@media all and (min-width:768px) and (max-width:1023px)
 {
   .horizontal-bar 
   {
@@ -189,8 +189,8 @@ body
   }
 }
 
-/* 모바일 이하 */
-@media all and (max-width: 600px) 
+/* 모바일 */
+@media all and (max-width:767px)
 {
   .horizontal-bar 
   {

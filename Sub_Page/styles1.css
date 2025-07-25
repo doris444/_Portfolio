@@ -74,8 +74,8 @@ footer
   font-weight: bold;
 }
 
-/* 1024px 이하 */
-@media all and (max-width: 1024px) 
+/* 테블릿 */
+@media all and (min-width:768px) and (max-width:1023px)
 {
   .button-wrapper 
   {
@@ -142,8 +142,8 @@ footer
   }
 }
 
-/* 600px 이하 */
-@media all and (max-width: 600px) 
+/* 모바일 */
+@media all and (max-width:767px)
 {
   .button-wrapper 
   {
