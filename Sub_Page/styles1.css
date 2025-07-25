@@ -77,22 +77,36 @@ footer
 /* 테블릿 */
 @media all and (min-width:768px) and (max-width:1023px)
 {
+  .name 
+  {
+    font-size: 14px;
+    top: 10px;
+    left: 30px;
+  }
+
+  .title 
+  {
+    font-size: 30px;
+    top: 40px;
+    left: 30px;
+  }
+
   .button-wrapper 
   {
     flex-wrap: wrap;
-    gap: 20px;
-    top: 160px;
-    justify-content: flex-start;    /* 왼쪽 정렬 */
-    padding-left: 40px;             /* 헤더 텍스트 시작 위치 맞춤 */
-    width: auto;                   /* 화면 가득 채우지 않고 내용만큼 */
-    max-width: calc(100% - 20px);  /* 여백 고려 */
+    gap: 16px;
+    top: 120px;
+    justify-content: flex-start;
+    padding-left: 30px;                /* 헤더 시작 위치와 일치 */
+    width: auto;
+    max-width: calc(100% - 40px);      /* 좌우 여백 확보 */
   }
 
   .button 
   {
-    width: calc(50% - 10px);
-    aspect-ratio: 2 / 3;
-    font-size: 16px;
+    width: 140px;
+    height: 210px;
+    font-size: 14px;
     position: relative;
     overflow: visible;
   }
@@ -108,9 +122,9 @@ footer
   .label 
   {
     position: absolute;
-    top: 60%;
-    left: 10%;                    /* 카드 내부 왼쪽 여백 유지 */
-    font-size: 18px;
+    top: 62%;
+    left: 10%;
+    font-size: 14px;
     white-space: nowrap;
     text-align: left;
     pointer-events: none;
@@ -119,28 +133,95 @@ footer
   .sublabel 
   {
     position: absolute;
-    top: 75%;
-    left: 10%;                   /* 카드 내부 왼쪽 여백 유지 */
-    font-size: 14px;
+    top: 76%;
+    left: 10%;
+    font-size: 12px;
     white-space: nowrap;
     text-align: left;
     pointer-events: none;
   }
 
-  .title 
+  footer 
   {
-    font-size: 36px;
-    top: 30px;
-    left: 20px;
-  }
-
-  .name 
-  {
-    font-size: 16px;
-    top: 10px;
-    left: 20px;
+    font-size: 14px;
+    padding: 10px 30px;
   }
 }
+
+/* 테블릿 */
+@media all and (min-width:768px) and (max-width:1023px)
+{
+  .name 
+  {
+    font-size: 14px;
+    top: 10px;
+    left: 30px;
+  }
+
+  .title 
+  {
+    font-size: 28px;
+    top: 38px;
+    left: 30px;
+  }
+
+  .button-wrapper 
+  {
+    flex-wrap: wrap;
+    gap: 14px;
+    top: 110px;
+    justify-content: flex-start;
+    padding-left: 30px;
+    width: auto;
+    max-width: calc(100% - 40px);
+  }
+
+  .button 
+  {
+    width: 120px;
+    height: 180px;
+    font-size: 13px;
+    position: relative;
+    overflow: visible;
+  }
+
+  .button img 
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .label 
+  {
+    position: absolute;
+    top: 62%;
+    left: 8%;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .sublabel 
+  {
+    position: absolute;
+    top: 76%;
+    left: 8%;
+    font-size: 11px;
+    white-space: nowrap;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  footer 
+  {
+    font-size: 13px;
+    padding: 10px 30px;
+  }
+}
+
 
 /* 모바일 */
 @media all and (max-width:767px)
