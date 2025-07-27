@@ -116,6 +116,20 @@ body
   to   { left: 54%; opacity: 1; }
 }
 
+/*태블릿 가로*/
+@keyframes slideToNameTablet 
+{
+  from { transform: translateX(-80%); opacity: 0; }
+  to   { transform: translateX(calc(-50% - 32px)); opacity: 1; }
+}
+
+@keyframes slideToTitleTablet 
+{
+  from { transform: translateX(-20%); opacity: 0; }
+  to   { transform: translateX(calc(-50% + 20px)); opacity: 1; }
+}
+
+
 /* 모바일 애니메이션 */
 @keyframes slideToNameMobile 
 {
@@ -127,6 +141,67 @@ body
 {
   from { left: 60%; opacity: 0; }
   to   { left: 50%; opacity: 1; }
+}
+
+/* 태블릿 가로*/
+@media all and (min-width:1024px) and (max-width:1399px)
+{
+  .horizontal-bar 
+  {
+    top: 15%;
+    width: 100vw;
+    height: 70px;
+  }
+
+  .vertical-bar 
+  {
+    left: 10%;
+    width: 60px;
+    height: 100vh;
+  }
+
+  .name 
+  {
+    top: 230px;
+    left: 44.3% !important;
+    transform: translateX(calc(-50% - 32px));
+    animation: slideToNameTablet 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .name h2 
+  {
+    font-size: 50px;
+  }
+
+  .title 
+  {
+    top: 290px;
+    left: 45% !important;
+    transform: translateX(calc(-50% + 20px));
+    animation: slideToTitleTablet 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .title h1 
+  {
+    font-size: 110px;
+  }
+
+  .button-wrapper 
+  {
+    top: 520px;
+    left: 40.5%;
+    transform: translateX(-50%);
+  }
+
+  .button 
+  {
+    width: 280px;
+    height: 75px;
+    font-size: 32px;
+    line-height: 75px;
+  }
 }
 
 /* 태블릿 */
@@ -150,8 +225,7 @@ body
   {
     top: 510px;
     left: 50%;
-    transform: translateX(-50%);
-    transform: translateX(calc(-50% - 32px));  /* 오른으로 20px 더 이동 */
+    transform: translateX(calc(-50% - 32px));
     animation: slideToNameMobile 0.6s ease-out forwards;
   }
 
@@ -164,7 +238,7 @@ body
   {
     top: 560px;
     left: 50%;
-    transform: translateX(calc(-50% + 20px));  /* 왼쪽으로 20px 더 이동 */
+    transform: translateX(calc(-50% + 20px));
     animation: slideToTitleMobile 0.5s ease-out forwards;
   }
 
@@ -207,7 +281,7 @@ body
   .name 
   {
     top: 200px;
-    transform: translateX(calc(-50% - 8px));  /* 왼쪽으로 10px 더 이동 */
+    transform: translateX(calc(-50% - 8px));
   }
 
   .name h2 
