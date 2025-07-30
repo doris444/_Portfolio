@@ -344,71 +344,116 @@
   }
 }
 
-@media all and (max-width:767px)
-{
-  .title 
-  {
-    font-size: 36px;
+@media all and (min-width:360px) and (max-width:767px) {
+  .container,
+  .colored-section {
+    padding: 30px 15px;
+    box-sizing: border-box;
   }
 
-  .name 
-  {
-    font-size: 18px;
+  .name {
+    font-size: clamp(16px, 5vw, 22px);
+     padding-left: 20px;
   }
 
-  .game-description, .game-text 
-  {
-    font-size: 14px;
+  .title {
+    font-size: clamp(28px, 8vw, 50px);
+    margin-bottom: 40px;
+    padding-left: 20px;
   }
 
-  .game-title 
-  {
-    font-size: 28px;
-  }
-
-  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
-  .game-right 
-  {
-    padding-left: 15px;
-  }
-  .game-title 
-  {
+  .game-title {
+    font-size: clamp(20px, 6vw, 28px);
+    margin-bottom: 20px;
     text-align: left;
-    margin-bottom: 15px;
-  }
-  .game-text 
-  {
-    text-align: left;
-    font-size: 14px;
   }
 
-  /* 다운로드 버튼 너비 및 위치 조정 */
-  .download-link 
-  {
+  .game-text {
+    font-size: clamp(13px, 4.5vw, 16px) !important;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .game-description {
+    font-size: clamp(13px, 4.5vw, 16px) !important;
+    line-height: 1.6;
+  }
+
+  .game-right {
+    padding-left: 20px;
+  }
+
+  .game-left {
+    padding-left: 0px;
+  }
+
+  .colored-section {
+    overflow-x: hidden;
+  }
+
+  .game-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
     width: 100%;
-    font-size: 14px;
-    padding: 8px 16px;
+    box-sizing: border-box;
   }
 
-  /* 다른 항목 보러가기 버튼 위치 조정 */
-  .other-items-button 
-  {
-    margin-top: 20px !important;
+  .game-left,
+  .game-right {
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+
+  .screenshot-grid,
+  .screenshot-grid.witch {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10px;
+  }
+
+  .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .screenshot-grid.witch {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .download-link {
+    width: 100%;
+    font-size: clamp(13px, 4.5vw, 16px) !important;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  .other-items-button {
+    margin-top: 10px;
     display: block;
     text-align: center;
+    font-size: clamp(13px, 4.5vw, 16px) !important;
   }
 
-  /* 마녀 과자가게 스크린샷 4열 1행 유지 */
-  .screenshot-grid.witch 
-  {
-    grid-template-columns: repeat(4, 1fr) !important;
+  .divider {
     width: 100%;
-  }
-
-  footer 
-  {
-    font-size: 14px;
-    padding: 10px 20px;
   }
 }
 
