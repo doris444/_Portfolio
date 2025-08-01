@@ -346,52 +346,63 @@
 
 @media all and (min-width:360px) and (max-width:767px) {
   .container,
-  .colored-section {
+  .colored-section 
+  {
     padding: 30px 15px;
     box-sizing: border-box;
   }
 
-  .name {
-    font-size: clamp(16px, 5vw, 22px);
+  .name 
+  {
+    font-size: 12.5px;
      padding-left: 20px;
   }
 
-  .title {
-    font-size: clamp(28px, 8vw, 50px);
-    margin-bottom: 40px;
+  .title 
+  {
+    font-size: 28px;
+    margin-top: 3px;
+    margin-bottom: 50px;
     padding-left: 20px;
   }
 
-  .game-title {
-    font-size: clamp(20px, 6vw, 28px);
+  .game-title 
+  {
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: left;
   }
 
-  .game-text {
-    font-size: clamp(13px, 4.5vw, 16px) !important;
+  .game-text 
+  {
+    font-size: 13px;
     line-height: 1.6;
     text-align: left;
   }
 
-  .game-description {
-    font-size: clamp(13px, 4.5vw, 16px) !important;
+  .game-description 
+  {
+    font-size: 13px;
     line-height: 1.6;
   }
 
-  .game-right {
+  .game-right 
+  {
     padding-left: 20px;
   }
 
-  .game-left {
+  .game-left 
+  {
     padding-left: 0px;
   }
 
-  .colored-section {
+  .colored-section 
+  {
     overflow-x: hidden;
   }
 
-  .game-content {
+  .game-content 
+  {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -400,30 +411,33 @@
     box-sizing: border-box;
   }
 
-  .game-left,
-  .game-right {
+  .game-left, .game-right 
+  {
     width: 100%;
     margin-left: 0;
     box-sizing: border-box;
   }
 
-  .screenshot-grid,
-  .screenshot-grid.witch {
+  .screenshot-grid, .screenshot-grid.witch 
+  {
     display: grid;
     width: 100%;
     box-sizing: border-box;
     gap: 10px;
   }
 
-  .screenshot-grid {
+  .screenshot-grid 
+  {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .screenshot-grid.witch {
+  .screenshot-grid.witch 
+  {
     grid-template-columns: repeat(4, 1fr) !important;
   }
 
-  .screenshot {
+  .screenshot 
+  {
     width: 100%;
     height: auto;
     display: block;
@@ -431,30 +445,45 @@
     box-sizing: border-box;
   }
 
-  img {
+  img 
+  {
     max-width: 100%;
     height: auto;
     display: block;
   }
 
-  .download-link {
+  .download-link 
+  {
     width: 100%;
-    font-size: clamp(13px, 4.5vw, 16px) !important;
-    padding: 10px 20px;
+    font-size: 13px;
+    padding: 6px 20px;
     box-sizing: border-box;
-    margin-top: 10px;
+    margin-top: -2px;
   }
 
-  .other-items-button {
-    margin-top: 10px;
+  .other-items-button 
+  {
+    margin-top: -25px !important;
     display: block;
     text-align: center;
-    font-size: clamp(13px, 4.5vw, 16px) !important;
+    font-size: 13px;
+    padding: 9px 12px !important;
   }
 
-  .divider {
+  .steam-link
+  {
+    font-size: 12px !important;
+  }
+
+  .divider 
+  {
     width: 100%;
   }
+
+  footer 
+    {
+      font-size: 13px;
+    }
 }
 
   </style>
@@ -495,7 +524,7 @@
           <a href="https://drive.google.com/drive/folders/1XqHLt6OrMXzqCEmRkMbKlOnoTyl-eB6g?usp=sharing" target="_blank" class="download-link">
             포토폴리오 다운로드 (PPT + PDF)
           </a>
-          <div style="margin-top: 8px; font-size: 16px; color: white;">
+          <div class="steam-link" style="margin-top: 8px; font-size: 16px; color: white;">
             스팀 링크 : 
             <a href="https://store.steampowered.com/app/yourgame" target="_blank" style="color:#ffd89d; text-decoration: underline;">
               https://store.steampowered.com/app/yourgame
