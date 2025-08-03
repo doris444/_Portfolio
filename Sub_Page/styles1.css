@@ -114,18 +114,20 @@ footer
 {
   html, body 
   {
-    height: 100%;
+    height: auto;
     margin: 0;
-    overflow: auto !important;
     padding: 0;
+    overflow-y: auto; 
   }
 
   .container 
   {
-    position: relative;
-    min-height: 100vh;
-    padding: 0;
-    box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-height: 1400px !important;
   }
 
   .name, .title 
@@ -150,12 +152,10 @@ footer
 
   .button-wrapper 
   {
-    position: absolute !important;
-    top: 220px !important;
-    width: 100%;
+    position: relative !important;
     display: grid !important;
     grid-template-columns: repeat(2, 295px);
-    gap: 10px;
+    gap: 28px !important;
     padding: 0 30px;
     box-sizing: border-box;
     justify-content: flex-start !important;
@@ -165,9 +165,8 @@ footer
   .button 
   {
     width: 295px !important;
-    height: 450px !important;
+    height: 450px !important; 
     position: relative;
-    overflow: hidden;
     display: block;
     background-color: #d9d9d9;
     cursor: pointer;
@@ -212,19 +211,16 @@ footer
     transition: all 0.3s ease;
   }
 
-  /* 푸터 하단 고정 + 컨텐츠 끝과 400px 간격 유지 */
   .wrapper 
   {
-    min-height: 100%;
-    padding-bottom: 550px; /* 150px 푸터 높이 + 400px 여유 공간 */
+    width: 100%;
     box-sizing: border-box;
   }
 
   footer 
   {
+    top: 1250px;
     height: 150px;
-    position: relative;
-    transform: translateY(calc(-100% + 400px)); /* 푸터 높이만큼 올렸다가 400px 다시 내림 */
     font-size: 13px;
     padding: 35px !important;
     margin-top: 0;
@@ -235,6 +231,8 @@ footer
     box-sizing: border-box;
   }
 }
+
+
 
 
 /* 모바일 */
