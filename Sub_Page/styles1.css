@@ -24,7 +24,7 @@
   {
     position: absolute;
     top: 35px !important;
-    left: 30px !important;
+    left: clamp(30px, 2.3vw, 40px) !important;
     font-size: clamp(24px, 1.9vw, 30px) !important;
     font-weight: bold;
   }
@@ -32,15 +32,15 @@
   .title 
   {
     position: absolute;
-    top: 80px;
-    left: 30px !important;
-    font-size: clamp(60px, 4.8vw, 72px) !important;
+    top: clamp(65px, 1.025vw + 51.2px, 70px) !important;
+    left: clamp(30px, 2.3vw, 40px) !important;
+    font-size: clamp(60px, 4.4vw, 72px) !important;
     font-weight: 900;
   }
 
   .button-wrapper 
   {
-    top: 200px;
+    top: clamp(200px, calc(6.148vw + 121.3px), 230px) !important;
     padding: 0 clamp(10px, 1vw, 20px) !important;
     width: 100%;
     display: flex;
