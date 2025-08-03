@@ -155,7 +155,7 @@ footer
     position: relative !important;
     display: grid !important;
     grid-template-columns: repeat(2, 295px);
-    gap: 28px !important;
+    gap: 20px !important;
     padding: 0 30px;
     box-sizing: border-box;
     justify-content: flex-start !important;
