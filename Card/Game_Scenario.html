@@ -561,7 +561,8 @@
    <!-- 연결 링크 없으면 버튼 비활성화 -->
   <script>
     const downloadLink = document.querySelector('.download-link');
-    if (!downloadLink.getAttribute('href').trim()) {
+    if (!downloadLink.getAttribute('href').trim()) 
+    {
       downloadLink.textContent = '포트폴리오 준비 중입니다';
       downloadLink.style.pointerEvents = 'none';
       downloadLink.style.opacity = '0.6';
