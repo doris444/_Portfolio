@@ -1,4 +1,4 @@
-/* 노트북 */
+/* 노트북  & 데스크탑*/
 @media all and (min-width: 1280px) and (max-width: 1768px) 
 {
   html, body 
@@ -242,14 +242,15 @@
 
 
 /* 모바일 */
-@media all and (min-width: 360px) and (max-width: 767px) {
+@media all and (min-width: 360px) and (max-width: 767px) 
+{
   html, body 
   {
     height: auto;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto !important;
   }
 
   .name 
