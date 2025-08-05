@@ -95,30 +95,37 @@
   </div>
 
   <script>
-    const modal = document.getElementById('scaleModal');
-    const closeBtn = document.getElementById('closeModal');
+  const modal = document.getElementById('scaleModal');
+  const closeBtn = document.getElementById('closeModal');
 
-    // 디바이스 해상도 비율 + 데스크탑 여부 체크
-    function isDesktop() 
+  // 모바일 또는 태블릿인지 확인하는 함수
+  function isMobileOrTablet() 
+  {
+    const ua = navigator.userAgent.toLowerCase();
+    return /android|iphone|ipad|ipod|tablet|mobile/.test(ua);
+  }
+
+  // 진짜 데스크탑인지 확인 (해상도 + 기기 타입)
+  function isRealDesktop() 
+  {
+    return !isMobileOrTablet() && window.innerWidth >= 1024;
+  }
+
+  function checkScale() 
+  {
+    const scale = window.devicePixelRatio || 1;
+    if (scale > 1 && isRealDesktop()) 
     {
-      return window.innerWidth >= 1024; // 데스크탑 기준 width
+      modal.style.display = 'flex';
     }
+  }
 
-    function checkScale() 
-    {
-      const scale = window.devicePixelRatio || 1;
-      if (scale > 1 && isDesktop()) 
-      {
-        modal.style.display = 'flex';
-      }
-    }
+  closeBtn.addEventListener('click', () => 
+  {
+    modal.style.display = 'none';
+  });
 
-    closeBtn.addEventListener('click', () => 
-    {
-      modal.style.display = 'none';
-    });
-
-    window.addEventListener('load', checkScale);
+  window.addEventListener('load', checkScale);
   </script>
 </body>
 </html>
