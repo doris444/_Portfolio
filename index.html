@@ -98,14 +98,15 @@
   const modal = document.getElementById('scaleModal');
   const closeBtn = document.getElementById('closeModal');
 
-  // 모바일 또는 태블릿인지 확인하는 함수
+  // 모바일 또는 태블릿인지 확인 (userAgent + 터치 기기)
   function isMobileOrTablet() 
   {
     const ua = navigator.userAgent.toLowerCase();
-    return /android|iphone|ipad|ipod|tablet|mobile/.test(ua);
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
+    return /android|iphone|ipad|ipod|tablet|mobile/.test(ua) || isTouch;
   }
 
-  // 진짜 데스크탑인지 확인 (해상도 + 기기 타입)
+  // 진짜 데스크탑만 통과 (너비 + 터치 불가 + userAgent)
   function isRealDesktop() 
   {
     return !isMobileOrTablet() && window.innerWidth >= 1024;
