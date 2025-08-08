@@ -335,19 +335,19 @@ body
 /* 모바일 가로 */
 @media all and (max-width:767px) and (orientation: landscape)
 {
-  .horizontal-bar 
+  body.mobile-landscape-force .horizontal-bar 
   {
     top: 12%;
     height: 50px;
   }
 
-  .vertical-bar 
+  body.mobile-landscape-force .vertical-bar 
   {
     left: 5%;
     width: 40px;
   }
 
-  .name 
+  body.mobile-landscape-force .name 
   {
     top: 130px !important;
     transform: translateX(calc(-50% - 8px));
@@ -358,12 +358,12 @@ body
     will-change: transform, opacity;
   }
 
-  .name h2 
+  body.mobile-landscape-force .name h2 
   {
     font-size: 28px;
   }
 
-  .title 
+  body.mobile-landscape-force .title 
   {
     top: 170px !important;
     left: 35% !important;
@@ -373,19 +373,19 @@ body
     will-change: transform, opacity;
   }
 
-  .title h1 
+  body.mobile-landscape-force .title h1 
   {
     font-size: 58px;
   }
 
-  .button-wrapper 
+  body.mobile-landscape-force .button-wrapper 
   {
     top: 280px;
     left: 35%;
     transform: translateX(-50%);
   }
 
-  .button 
+  body.mobile-landscape-force .button 
   {
     width: 220px;
     height: 60px;
