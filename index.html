@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ko">
 <head> 
@@ -171,32 +172,6 @@
 window.addEventListener('resize', updateBodyOverflow);
 window.addEventListener('orientationchange', updateBodyOverflow);
 updateBodyOverflow();
-
-
-// 메인페이지 안 잘리게 통일 시키기
-(function() 
-{
-  function applyMobileLandscapeMode() 
-  {
-    const isPhone = /Mobi|Android|iPhone|iPod/i.test(navigator.userAgent);
-    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-    const isSmallWidth = window.innerWidth <= 767;
-
-    if (isPhone && isLandscape && isSmallWidth) 
-    {
-      document.body.classList.add('mobile-landscape-force');
-    } 
-    else 
-    {
-      document.body.classList.remove('mobile-landscape-force');
-    }
-  }
-
-  applyMobileLandscapeMode();
-  window.addEventListener('resize', applyMobileLandscapeMode);
-  window.addEventListener('orientationchange', applyMobileLandscapeMode);
-})();
-
 
   </script>
 </body>
