@@ -263,8 +263,8 @@ body
   }
 }
 
-/* 모바일 세로 */
-@media all and (max-width:767px) and (orientation: portrait)
+/* 모바일 */
+@media all and (max-width:767px)
 {
   .horizontal-bar 
   {
@@ -313,61 +313,4 @@ body
     font-size: 22px;
     line-height: 60px;
   }
-}
-
-/* 모바일 가로 */
-@media all and (max-width:767px) and (orientation: landscape)
-{
-  body 
-  {
-    overflow-y: auto !important;
-    overflow-x: hidden;
-  }
-  .horizontal-bar 
-  {
-    top: 12%;
-    height: 50px;
-  }
-
-  .vertical-bar 
-  {
-    left: 5%;
-    width: 40px;
-  }
-
-  .name 
-  {
-    top: 200px;
-    transform: translateX(calc(-50% - 8px));
-  }
-
-  .name h2 
-  {
-    font-size: 28px;
-  }
-
-  .title 
-  {
-    top: 240px;
-  }
-
-  .title h1 
-  {
-    font-size: 58px;
-  }
-
-  .button-wrapper 
-  {
-    top: 430px;
-    left: 51%;
-    transform: translateX(-50%);
-  }
-
-  .button 
-  {
-    width: 220px;
-    height: 60px;
-    font-size: 22px;
-    line-height: 60px;
-  }
-}
+} 

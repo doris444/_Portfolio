@@ -147,6 +147,30 @@
   });
 
   window.addEventListener('load', checkScale);
+
+  // 모바일 가로 상태면 스크롤 허용
+
+    function updateBodyOverflow() 
+    {
+    const isMobileWidth = window.innerWidth <= 768;
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+    if (isMobileWidth && isLandscape) 
+    {
+      document.body.style.overflowY = 'auto';
+      document.body.style.overflowX = 'hidden';
+    } 
+    else 
+    {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  window.addEventListener('resize', updateBodyOverflow);
+  window.addEventListener('orientationchange', updateBodyOverflow);
+
+  // 초기 실행
+  updateBodyOverflow();
   </script>
 </body>
 </html>
