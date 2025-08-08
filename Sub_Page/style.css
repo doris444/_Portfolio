@@ -331,7 +331,7 @@
   footer 
   {
     top : 800px;
-    height: 70px !important;
+    height: 64px !important;
     font-size: clamp(12px, 2.8vw, 14px) !important;
     display: flex !important;
     justify-content: left !important;  
