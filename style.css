@@ -145,17 +145,18 @@ body
 
   /* 모바일 가로*/
 
+
 @keyframes slideToNameMobileLandscape 
 {
-  from { left: 25%; opacity: 0; }
-  to { left: 32%; opacity: 1; }
+  from { transform: translateX(-60%); opacity: 0; }
+  to   { transform: translateX(calc(-50% - 8px)); opacity: 1; }
 }
-
 @keyframes slideToTitleMobileLandscape 
 {
-  from { left: 40%; opacity: 0; }
-  to { left: 35%; opacity: 1; }
+  from { transform: translateX(-40%); opacity: 0; }
+  to   { transform: translateX(calc(-50% + 10px)); opacity: 1; }
 }
+
 
 
 /* 태블릿 가로*/
@@ -350,9 +351,11 @@ body
   {
     top: 130px !important;
     transform: translateX(calc(-50% - 8px));
-    left: 32% !important;
+    left: 34% !important;
+    transform: translateX(-60%); 
     opacity: 0;
     animation: slideToNameMobileLandscape 0.6s ease-out forwards;
+    will-change: transform, opacity;
   }
 
   .name h2 
@@ -364,8 +367,10 @@ body
   {
     top: 170px !important;
     left: 35% !important;
+    transform: translateX(-40%);
     opacity: 0;
     animation: slideToTitleMobileLandscape 0.5s ease-out forwards;
+    will-change: transform, opacity;
   }
 
   .title h1 
