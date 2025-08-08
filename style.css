@@ -263,8 +263,8 @@ body
   }
 }
 
-/* 모바일 */
-@media all and (max-width:767px)
+/* 모바일 세로 */
+@media all and (max-width:767px) and (orientation: portrait)
 {
   .horizontal-bar 
   {
@@ -304,6 +304,61 @@ body
   {
     top: 430px;
     left: 51%;
+    transform: translateX(-50%);
+  }
+
+  .button 
+  {
+    width: 220px;
+    height: 60px;
+    font-size: 22px;
+    line-height: 60px;
+  }
+}
+
+/* 모바일 가로 */
+@media all and (max-width:767px) and (orientation: landscape)
+{
+  .horizontal-bar 
+  {
+    top: 12%;
+    height: 50px;
+  }
+
+  .vertical-bar 
+  {
+    left: 5%;
+    width: 40px;
+    height: 100vh !important;
+  }
+
+  .name 
+  {
+    top: 130px !important;
+    transform: translateX(calc(-50% - 8px));
+    left: 32% !important;
+  }
+
+  .name h2 
+  {
+    font-size: 28px;
+  }
+
+  .title 
+  {
+    top: 170px !important;
+    left: 35% !important;
+  }
+
+  .title h1 
+  {
+    font-size: 58px;
+  }
+
+  .button-wrapper 
+  {
+    top: 280px;
+    left: 33%;
     transform: translateX(-50%);
   }
 
