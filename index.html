@@ -147,30 +147,31 @@
   });
 
   window.addEventListener('load', checkScale);
+  
 
   // 모바일 가로 상태면 스크롤 허용
 
-    function updateBodyOverflow() 
-    {
-    const isMobileWidth = window.innerWidth <= 768;
-    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-
-    if (isMobileWidth && isLandscape) 
-    {
-      document.body.style.overflowY = 'auto';
-      document.body.style.overflowX = 'hidden';
-    } 
-    else 
-    {
-      document.body.style.overflow = 'hidden';
-    }
+  function updateBodyOverflow() 
+  {
+  const isLandscape = window.innerWidth > window.innerHeight;
+  if (isLandscape) 
+  {
+    document.body.style.overflowY = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowY = 'auto';
+    document.documentElement.style.overflowX = 'hidden';
+  } 
+  else 
+  {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   }
+}
 
-  window.addEventListener('resize', updateBodyOverflow);
-  window.addEventListener('orientationchange', updateBodyOverflow);
+window.addEventListener('resize', updateBodyOverflow);
+window.addEventListener('orientationchange', updateBodyOverflow);
+updateBodyOverflow();
 
-  // 초기 실행
-  updateBodyOverflow();
   </script>
 </body>
 </html>
