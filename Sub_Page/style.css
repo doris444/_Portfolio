@@ -128,12 +128,12 @@
 
     .container 
     {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    min-height: 1400px !important;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      min-height: 1400px !important;
     }
 
     .name, .title 
@@ -332,9 +332,10 @@
   {
     top : 800px;
     height: 64px !important;
-    font-size: clamp(12px, 2.8vw, 14px) !important;
+    font-size: clamp(10px, 2.8vw, 12px) !important;
     display: flex !important;
     justify-content: left !important;  
     align-items: center !important;
+    padding: 20px !important;
   }
 }
