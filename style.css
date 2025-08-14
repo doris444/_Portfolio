@@ -297,23 +297,23 @@ body
 
   .name 
   {
-    top: 200px;
+    top: 230px;
     transform: translateX(calc(-50% - 8px));
   }
 
   .name h2 
   {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .title 
   {
-    top: 240px;
+    top: 260px;
   }
 
   .title h1 
   {
-    font-size: 58px;
+    font-size: 50px;
   }
 
   .button-wrapper 
@@ -325,9 +325,9 @@ body
 
   .button 
   {
-    width: 220px;
-    height: 60px;
-    font-size: 22px;
+    width: 180px;
+    height: 55px;
+    font-size: 22px !important;
     line-height: 60px;
   }
 }
