@@ -43,7 +43,7 @@
     top: clamp(200px, calc(6.148vw + 121.3px), 230px) !important;
     padding: 0 clamp(10px, 1vw, 20px) !important;
     width: 100%;
-    height: clamp(700px, 35vw, 760px);
+    height: clamp(735px, 35vw, 760px);
     display: flex;
     justify-content: left !important;
     left: 22px !important;
