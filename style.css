@@ -34,7 +34,7 @@ body
   top: 0;
   left: 18%;
   width: 118px;
-  height: clamp(945px, 1.1vw, 948px) !important;
+  height: 100%;
   background-color: rgba(72, 72, 72, 0.8);
 }
 
