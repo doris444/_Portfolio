@@ -5,7 +5,7 @@ body
   padding: 0;
   font-family: 'NanumSquare', sans-serif;
   background-color: white;
-  overflow: hidden;
+  overflow-y: hidden !important;
 }
 
 /* 오버레이 전체 */
@@ -34,7 +34,7 @@ body
   top: 0;
   left: 18%;
   width: 118px;
-  height: 100%;
+  height: 1280px;
   background-color: rgba(72, 72, 72, 0.8);
 }
 
@@ -335,6 +335,10 @@ body
 /* 모바일 가로 */
 @media all and (max-width:767px) and (orientation: landscape)
 {
+    html, body
+  {
+    overflow-y: auto !important;
+  }
   .horizontal-bar 
   {
     top: 12%;
