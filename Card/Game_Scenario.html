@@ -184,225 +184,225 @@
       color: inherit;
     }
 
-  @media all and (min-width: 1280px) and (max-width: 1768px) 
-  {
-  html, body 
-  {
-    -webkit-text-size-adjust: 100% !important;
-    text-size-adjust: 100% !important;
+    @media all and (min-width: 1280px) and (max-width: 1768px) 
+    {
+    html, body 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .game-text, .game-description, footer, .download-link 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .colored-section 
+    {
+      padding: 60px 40px;
+      box-sizing: border-box;
+    }
+
+    .game-content 
+    {
+      display: flex;
+      flex-direction: row;
+      gap: clamp(80px, 6vw, 120px); /*반응형 갭*/
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .game-left 
+    {
+      width: 47%;
+      flex-shrink: 0;
+      padding-left: 40px;
+      box-sizing: border-box;
+    }
+
+    .game-right 
+    {
+      width: 46%;
+      margin-left: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .game-right .game-title 
+    {
+      font-size: clamp(32px, 2.2vw, 36px); /*반응형 제목 폰트 */
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .game-right .game-text 
+    {
+      font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
+      text-align: left;
+      line-height: 1.6;
+      margin-bottom: auto;
+    }
+
+    .download-link 
+    {
+      width: 100%;
+      font-size: clamp(14px, 1.1vw, 16px); /*버튼 폰트도 반응형 */
+      padding: 10px 20px;
+      box-sizing: border-box;
+      margin-top: 17px;
+    }
+
+    .game-description
+    {
+      font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
+    }
+
+
+    .screenshot-grid, .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .divider 
+    {
+      display: block !important;
+      border-top: 2px solid #ccc;
+      margin: 20px 0;
+    }
+
+    .other-items-button 
+    {
+      margin-top: -45px !important;
+      display: block !important;
+      text-align: center;
+      font-size: clamp(14px, 1vw, 16px); /*버튼 폰트도 부드럽게 조정 */
+    }
+
+    footer
+    {
+      font-size: clamp(8px, 1.1vw, 12px); /*반응형 본문 폰트 */
+    }
   }
 
-  .game-text, .game-description, footer, .download-link 
-  {
-    -webkit-text-size-adjust: 100% !important;
-    text-size-adjust: 100% !important;
-  }
+    @media all and (min-width:768px) and (max-width:1279px)
+    {
+    html, body 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
 
-  .colored-section 
-  {
-    padding: 60px 40px;
-    box-sizing: border-box;
-  }
+    .game-text, .game-description, footer, .download-link 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
 
-  .game-content 
-  {
-    display: flex;
-    flex-direction: row;
-    gap: clamp(80px, 6vw, 120px); /*반응형 갭*/
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
+    .container, .colored-section 
+    {
+      padding: 30px 30px;
+    }
 
-  .game-left 
-  {
-    width: 47%;
-    flex-shrink: 0;
-    padding-left: 40px;
-    box-sizing: border-box;
-  }
+    .title 
+    {
+      font-size: 50px;
+    }
 
-  .game-right 
-  {
-    width: 46%;
-    margin-left: 0;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-  }
+    .name 
+    {
+      font-size: 22px;
+    }
 
-  .game-right .game-title 
-  {
-    font-size: clamp(32px, 2.2vw, 36px); /*반응형 제목 폰트 */
-    margin-bottom: 20px;
-    text-align: left;
-  }
+    .game-description
+    {
+      font-size: 14px;
+      line-height: 1.6 !important;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
 
-  .game-right .game-text 
-  {
-    font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: auto;
-  }
+    .game-text
+    {
+      font-size: 18px;
+    }
 
-  .download-link 
-  {
-    width: 100%;
-    font-size: clamp(14px, 1.1vw, 16px); /*버튼 폰트도 반응형 */
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 17px;
-  }
+    .game-content 
+    {
+      flex-direction: column;
+      gap: 60px;
+    }
 
-   .game-description
-  {
-    font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
-  }
+    .game-left, .game-right 
+    {
+      width: 100%;
+      margin-left: 0;
+    }
 
+    .screenshot-grid, .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
 
-  .screenshot-grid, .screenshot-grid.witch 
-  {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
+    /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
+    .game-right 
+    {
+      padding-left: 20px;
+    }
+    .game-title 
+    {
+      text-align: left;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .game-text 
+    {
+      text-align: left;
+      font-size: 16px;
+    }
 
-  .screenshot-grid.witch 
-  {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+    /* 다운로드 버튼 너비 및 위치 조정 */
+    .download-link 
+    {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      margin-top: 10px;
+    }
 
-  .divider 
-  {
-    display: block !important;
-    border-top: 2px solid #ccc;
-    margin: 20px 0;
-  }
+    /* 다른 항목 보러가기 버튼 위치 조정 */
+    .other-items-button 
+    {
+      margin-top: -25px;
+      display: block;
+      text-align: center;
+      padding: 13px 21px !important;
+      font-size: 15px !important;
+    }
 
-  .other-items-button 
-  {
-    margin-top: -45px !important;
-    display: block !important;
-    text-align: center;
-    font-size: clamp(14px, 1vw, 16px); /*버튼 폰트도 부드럽게 조정 */
+    .divider 
+    {
+      width: 100%;
+    }
+    
+    footer
+    {
+      font-size: 12px !important;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
   }
-
-  footer
-  {
-    font-size: clamp(8px, 1.1vw, 12px); /*반응형 본문 폰트 */
-  }
-}
-
-  @media all and (min-width:768px) and (max-width:1279px)
-  {
-  html, body 
-  {
-    -webkit-text-size-adjust: 100% !important;
-    text-size-adjust: 100% !important;
-  }
-
-  .game-text, .game-description, footer, .download-link 
-  {
-    -webkit-text-size-adjust: 100% !important;
-    text-size-adjust: 100% !important;
-  }
-
-  .container, .colored-section 
-  {
-    padding: 30px 30px;
-  }
-
-  .title 
-  {
-    font-size: 50px;
-  }
-
-  .name 
-  {
-    font-size: 22px;
-  }
-
-  .game-description
-  {
-    font-size: 14px;
-    line-height: 1.6 !important;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
-
-  .game-text
-  {
-    font-size: 18px;
-  }
-
-  .game-content 
-  {
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  .game-left, .game-right 
-  {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .screenshot-grid, .screenshot-grid.witch 
-  {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-
-  /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
-  .game-right 
-  {
-    padding-left: 20px;
-  }
-  .game-title 
-  {
-    text-align: left;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .game-text 
-  {
-    text-align: left;
-    font-size: 16px;
-  }
-
-  /* 다운로드 버튼 너비 및 위치 조정 */
-  .download-link 
-  {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 10px;
-  }
-
-  /* 다른 항목 보러가기 버튼 위치 조정 */
-  .other-items-button 
-  {
-    margin-top: -25px;
-    display: block;
-    text-align: center;
-    padding: 13px 21px !important;
-    font-size: 15px !important;
-  }
-
-  .divider 
-  {
-    width: 100%;
-  }
-  
-  footer
-  {
-    font-size: 12px !important;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
-}
 
   @media all and (min-width:360px) and (max-width:767px) 
   {
