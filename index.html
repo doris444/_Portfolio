@@ -120,15 +120,15 @@
       scaleModal.style.display = 'none';
     });
 
-// 모바일/태블릿/맥북 확인
-function isMobileOrTablet() 
-{
-  const ua = navigator.userAgent.toLowerCase();
-  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
-  const isMacBook = /macintosh/.test(ua) && !('ontouchstart' in window);
+    // 모바일/태블릿/맥북 확인
+    function isMobileOrTablet() 
+    {
+      const ua = navigator.userAgent.toLowerCase();
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
+      const isMacBook = /macintosh/.test(ua) && !('ontouchstart' in window);
 
-  return /android|iphone|ipad|ipod|tablet|mobile/.test(ua) || isTouch || isMacBook;
-}
+      return /android|iphone|ipad|ipod|tablet|mobile/.test(ua) || isTouch || isMacBook;
+    }
 
 
     // 진짜 데스크탑 확인
