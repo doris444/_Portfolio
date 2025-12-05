@@ -167,7 +167,32 @@
       font-weight: 800;
       margin-bottom: 30px;
       color: #ffd89d;
+      margin-right: 50px;
+      line-height: 1.2;
+      gap: 25px;
+      display: flex;
     }
+
+
+    .label-wrap 
+    {
+    display: inline-flex;
+    align-items: flex-start;
+    }
+
+    .project-label 
+    {
+    background: #3f405e; 
+    padding: 4px 14px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffd89d;
+    display: inline-block;
+    position: relative;  
+    top: 7px;     
+  }
 
     .game-text 
     {
@@ -247,6 +272,20 @@
       margin-bottom: 20px;
       text-align: left;
     }
+
+    
+  .project-label 
+  {
+    font-size: clamp(8px, 0.9vw, 10px);
+    padding: 3px 12px;
+    top: clamp(6px, 0.45vw, 3px);
+    border-radius: 9px;
+  }
+
+  .game-title 
+  {
+    gap: 14px;
+  }
 
     .game-right .game-text 
     {
@@ -382,6 +421,19 @@
       font-size: 36px;
       margin-bottom: 20px;
     }
+
+    .project-label 
+    {
+      font-size: 11px;
+      padding: 3px 10px;
+      top: 8px;
+      border-radius: 8px;
+    }
+
+  .game-title 
+  {
+    gap: 10px;
+  }
     .game-text 
     {
       text-align: left;
@@ -460,10 +512,19 @@
 
     .game-title 
     {
-      font-size: clamp(18px, 5.5vw, 28px) !important;
+      font-size: clamp(15px, 5.5vw, 28px) !important;
       margin-bottom: 20px;
       text-align: left;
+      gap: 8px;
     }
+
+      .project-label 
+      {
+        font-size: 6px;
+        padding: 2px 8px;
+        top: 4px;
+        border-radius: 7px;
+      }
 
 
     .game-right .game-text 
@@ -635,7 +696,8 @@
           </div>
         </div>
          <div class="game-right">
-          <div class="game-title">창작 게임: 마녀 과자가게</div>
+          <div class="game-title">마녀 과자가게  <span class="label-wrap">
+    <span class="project-label"># 6주 프로젝트</span> </span></div>
           <div class="game-text">
             <b>■ 게임 소개</b> <br>
             "마녀 과자가게"는 귀여운 꼬마 마녀가 과자집을 제작해주는 건축 시뮬레이션 게임으로,<br>
@@ -666,7 +728,9 @@
           <a href="https://drive.google.com/drive/folders/1XqHLt6OrMXzqCEmRkMbKlOnoTyl-eB6g?usp=sharing" target="_blank" class="download-link">포트폴리오 다운로드 (PPT + PDF)</a>
         </div>
         <div class="game-right">
-          <div class="game-title">창작 게임: 거울 너머</div>
+          <div class="game-title">거울 너머   
+            <span class="label-wrap">
+            <span class="project-label"># 졸업프로젝트</span> </span></div>
           <div class="game-text">
             “그거 알아...? 한밤중 중앙 계단 2.5층 거울 앞에서 <br>
             『거울이여, 나를 거울 너머로 인도해 다오』라고 외치면…  <br>
