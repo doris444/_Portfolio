@@ -1,0 +1,11 @@
+# 기본
+.DS_Store
+Thumbs.db
+
+# zip은 Git LFS로 관리
+*.zip
+
+# Card/Files 폴더의 zip은 무조건 포함
+!Card/
+!Card/Files/
+!Card/Files/*.zip
