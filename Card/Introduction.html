@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게임 시나리오</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
+
+  <!-- 파비콘 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="manifest" href="../site.webmanifest">
+
+  
+  <style>
+    body 
+    {
+      margin: 0;
+      padding: 0;
+      font-family: 'NanumSquare', sans-serif;
+      background-color: white;
+    }
+
+    html, body 
+    {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .game-text, .game-description, footer, .download-link 
+    {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .container 
+    {
+      width: 100%;
+      padding: 30px 90px;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .name 
+    {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: -7px;
+    }
+
+    .title 
+    {
+      font-size: 70px;
+      font-weight: 900;
+      margin-bottom: 50px;
+    }
+
+    .game-description 
+    {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin: 30px 0;
+    }
+
+    .divider 
+    {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin: 20px 0;
+      width: 800px;
+    }
+
+    .colored-section 
+    {
+      background-color: #6667AB;
+      padding: 80px 90px;
+      color: white;
+      margin-top: 50px;
+    }
+
+    .game-content 
+    {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 80px;
+    }
+
+    .game-left 
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 800px;
+    }
+
+    .screenshot-grid 
+    {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      width: 800px;
+      margin-bottom: 15px;
+    }
+
+    .screenshot-grid img 
+    {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+
+    .download-link 
+    {
+      display: inline-block;
+      width: 754px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: #6667AB;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 5px;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .download-link:hover 
+    {
+      background-color: white;
+      color: #6667AB;
+      border: 2px solid #6667AB;
+    }
+
+    .game-right 
+    {
+      display: flex;
+      flex-direction: column;
+      margin-left: 100px;
+    }
+
+    .game-title 
+    {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #ffd89d;
+    }
+
+    .game-text 
+    {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: white;
+    }
+
+    footer 
+    {
+      background-color: #3f405e;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    a 
+    {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media all and (min-width: 1280px) and (max-width: 1768px) 
+    {
+    html, body 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .game-text, .game-description, footer, .download-link 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .colored-section 
+    {
+      padding: 60px 40px;
+      box-sizing: border-box;
+    }
+
+    .game-content 
+    {
+      display: flex;
+      flex-direction: row;
+      gap: clamp(80px, 6vw, 120px); /*반응형 갭*/
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .game-left 
+    {
+      width: 47%;
+      flex-shrink: 0;
+      padding-left: 40px;
+      box-sizing: border-box;
+    }
+
+    .game-right 
+    {
+      width: 46%;
+      margin-left: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .game-right .game-title 
+    {
+      font-size: clamp(32px, 2.2vw, 36px); /*반응형 제목 폰트 */
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .game-right .game-text 
+    {
+      font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
+      text-align: left;
+      line-height: 1.6;
+      margin-bottom: auto;
+    }
+
+    .download-link 
+    {
+      width: 100%;
+      font-size: clamp(14px, 1.1vw, 16px); /*버튼 폰트도 반응형 */
+      padding: 10px 20px;
+      box-sizing: border-box;
+      margin-top: 17px;
+    }
+
+    .game-description
+    {
+      font-size: clamp(14.3px, 1.1vw, 18px); /*반응형 본문 폰트 */
+    }
+
+
+    .screenshot-grid, .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .divider 
+    {
+      display: block !important;
+      border-top: 2px solid #ccc;
+      margin: 20px 0;
+    }
+
+    .other-items-button 
+    {
+      margin-top: -45px !important;
+      display: block !important;
+      text-align: center;
+      font-size: clamp(14px, 1vw, 16px); /*버튼 폰트도 부드럽게 조정 */
+    }
+
+    footer
+    {
+      font-size: clamp(8px, 1.1vw, 12px); /*반응형 본문 폰트 */
+    }
+  }
+
+    @media all and (min-width:768px) and (max-width:1279px)
+    {
+    html, body 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .game-text, .game-description, footer, .download-link 
+    {
+      -webkit-text-size-adjust: 100% !important;
+      text-size-adjust: 100% !important;
+    }
+
+    .container, .colored-section 
+    {
+      padding: 30px 30px;
+    }
+
+    .title 
+    {
+      font-size: 50px;
+    }
+
+    .name 
+    {
+      font-size: 22px;
+    }
+
+    .game-description
+    {
+      font-size: 14px;
+      line-height: 1.6 !important;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+
+    .game-text
+    {
+      font-size: 18px;
+    }
+
+    .game-content 
+    {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .game-left, .game-right 
+    {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .screenshot-grid, .screenshot-grid.witch 
+    {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    /* 게임 타이틀, 텍스트 왼쪽 정렬 및 위치 조정 */
+    .game-right 
+    {
+      padding-left: 20px;
+    }
+    .game-title 
+    {
+      text-align: left;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .game-text 
+    {
+      text-align: left;
+      font-size: 16px;
+    }
+
+    /* 다운로드 버튼 너비 및 위치 조정 */
+    .download-link 
+    {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      margin-top: 10px;
+    }
+
+    /* 다른 항목 보러가기 버튼 위치 조정 */
+    .other-items-button 
+    {
+      margin-top: -25px;
+      display: block;
+      text-align: center;
+      padding: 13px 21px !important;
+      font-size: 15px !important;
+    }
+
+    .divider 
+    {
+      width: 100%;
+    }
+    
+    footer
+    {
+      font-size: 12px !important;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+  }
+
+  @media all and (min-width:360px) and (max-width:767px) 
+  {
+  html, body 
+  {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+
+  .game-text, .game-description, footer, .download-link 
+  {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+
+  .container, .colored-section 
+  {
+    padding: 30px 15px;
+    box-sizing: border-box;
+  }
+
+  .name 
+  {
+    font-size: clamp(14px, 2.8vw, 16px);
+    padding-left: 20px;
+  }
+
+  .title
+  {
+      font-size: clamp(30px, 7vw, 40px);
+      margin-top: 3px;
+      margin-bottom: 50px;
+      padding-left: 20px;
+  }
+
+
+  .game-title 
+    {
+      font-size: clamp(18px, 5.5vw, 28px) !important;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+  .game-right .game-text 
+    {
+      font-size: clamp(12px, 2.5vw, 14px) !important;
+      line-height: 1.6 !important;
+      word-break: keep-all !important;
+      text-align: left !important;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+
+  .game-description 
+  {
+    padding-left: 20px;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    line-height: 1.6 !important;
+    word-break: keep-all !important;
+  }
+
+  .game-right 
+  {
+    padding-left: 20px;
+  }
+
+  .game-left 
+  {
+    padding-left: 0px;
+  }
+
+  .colored-section 
+  {
+    overflow-x: hidden;
+  }
+
+  .game-content 
+  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: clamp(30px, 5vw, 45px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .game-left, .game-right 
+  {
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+
+  .screenshot-grid, .screenshot-grid.witch 
+  {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 4px;
+  }
+
+  .screenshot-grid 
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .screenshot-grid.witch 
+  {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .screenshot 
+  {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+
+  img 
+  {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .download-link 
+  {
+    width: 100%;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    padding: clamp(6px, 1.8vw, 9px) 20px;
+    box-sizing: border-box;
+    margin-top: -2px;
+  }
+
+  .other-items-button 
+  {
+    margin-top: 15px !important;
+    display: block;
+    text-align: center;
+    font-size: clamp(11px, 2.5vw, 13px); /* 더 자연스럽게 반응함 */
+    padding: clamp(10px, 1.8vw, 12px) clamp(14px, 3vw, 18px) !important; /* 상하, 좌우 각각 clamp */
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  .divider 
+  {
+    width: 100%;
+  }
+
+  footer 
+  {
+    font-size: clamp(10px, 2.5vw, 12px) !important;
+    padding: 15px 10px !important;
+  }
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="name">
+      <a href="../Sub_Page/SubPage.html">Kim So Hyeon</a>
+    </div>
+    <div class="title">
+      <a href="../Sub_Page/SubPage.html">Portfolio</a>
+    </div>
+
+    <hr class="divider" />
+    <div class="game-description">
+      창작 게임의 시나리오와 주요 인물 대사를 작성했습니다. <br>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <div class="colored-section">
+    <!-- Time Chaser 게임 시나리오 대사 -->
+    <div class="game-block">
+      <div class="game-content">
+        <div class="game-left">
+          <div class="screenshot-grid">
+            <img src="./Image/25.png" alt="스크린샷25" />
+            <img src="./Image/26.png" alt="스크린26" />
+            <img src="./Image/27.png" alt="스크린27" />
+            <img src="./Image/28.png" alt="스크린28" />
+          </div>
+          <a href="" target="_blank" class="download-link">포트폴리오 다운로드</a>
+        </div>
+        <div class="game-right">
+          <div class="game-title">자기 소개</div>
+          <div class="game-text">
+          타임머신이 개발된 지 한 달 후,<br>
+          과거로 돌아가 현재를 바꾸려는 행동은 불법으로 제정되었다.<br>
+          사람들의 운명과 선택이 바뀌며,
+          사회 구조가 왜곡될 위험이 있기 때문이었다.<br><br>
+
+          <span style="font-weight: 600; color: #ffd89d;"> 그런 불법 행위를 단속하기 위해,<br>
+          특수 능력을 사용할 수 있는 '시간 경찰'이라는 집단이 생겨났다.</span><br>
+          좋은 의도라고 해도 현재를 바꾸려는 건 불법이었기에,<br>
+          오늘도 그런 사람들을 체포하는 해미 순경이었다.<br><br>
+
+          시간이 흐르고, 해미는 경위로 승진해
+          강력 범죄 수사대로 배치되었다. <br>
+          오춘배 경찰서장은 해미가 순경 시절에 보여준
+          활약과 충성 덕분이라며, 칭찬을 아끼지 않았다.<br><br>
+
+          그러던 어느 날, 과거로 돌아가
+          사이보그 살인 병기를 만들어
+          현재를 멸망시키려는 <br> 집단을 추적해 달라는
+          의뢰가 해미에게 들어오게 된다.
+          </div>
+        </div>
+
+        <hr class="divider" style="border-top: 2px solid white; margin: 80px 0 20px 0; width: 100%;" />
+
+        <div style="text-align: center; margin-top: -11px;">
+          <a href="../Sub_Page/SubPage.html"
+             class="other-items-button"
+             style="padding: 15px 26px;
+                    background-color: #f2f2f2;
+                    color: #333;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: bold;">
+            🔍 다른 항목 보러가기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      전화번호 : 010-4617-8465 &nbsp; | &nbsp;  이메일 : tonightornever1016@naver.com <br />
+      <span style="color: #f5eaf8;">© Copyright 2025 김소현 All Rights Reserved.</span>
+    </p>
+  </footer>
+
+   <!-- 연결 링크 없으면 버튼 비활성화 -->
+  <script>
+    const downloadLink = document.querySelector('.download-link');
+    if (!downloadLink.getAttribute('href').trim()) 
+    {
+      downloadLink.textContent = '포트폴리오 준비 중입니다';
+      downloadLink.style.pointerEvents = 'none';
+      downloadLink.style.opacity = '0.6';
+      downloadLink.style.cursor = 'default';
+    }
+  </script>
+</body>
+</html>
